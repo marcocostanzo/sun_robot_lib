@@ -27,11 +27,12 @@
 
 #include "Traj_Generators/Traj_Generator_Interface.h"
 
+//! Abstract class representing a Scalar traj
 class Scalar_Traj_Interface : public Traj_Generator_Interface{
 
 private:
 
-/*
+/*!
     No default Constructor
 */
 Scalar_Traj_Interface();
@@ -40,13 +41,13 @@ public:
 
 /*====== CONSTRUCTORS =========*/
 
-/*
+/*!
     Constructor with duration and initial time as input
 */
 Scalar_Traj_Interface( double duration, double initial_time = 0.0 ):
     Traj_Generator_Interface( duration, initial_time ){}
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual Scalar_Traj_Interface* clone() const = 0;
@@ -55,17 +56,17 @@ virtual Scalar_Traj_Interface* clone() const = 0;
 
 /*====== RUNNERS =========*/
 
-/*
+/*!
     Get Position at time secs
 */
 virtual double getPosition(double secs) const = 0;
 
-/*
+/*!
     Get Velocity at time secs
 */
 virtual double getVelocity(double secs) const = 0;
 
-/*
+/*!
     Get Acceleration at time secs
 */
 virtual double getAcceleration(double secs) const = 0;

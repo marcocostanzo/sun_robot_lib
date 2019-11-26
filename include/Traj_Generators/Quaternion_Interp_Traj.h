@@ -33,6 +33,10 @@
 #include "Traj_Generators/Quaternion_Traj_Interface.h"
 #include "Traj_Generators/Scalar_Traj_Interface.h"
 
+//! WARNING THIS CLASS IS NOT READY USE Rotation_Const_Axis_Traj 
+/*!
+    \sa Rotation_Const_Axis_Traj
+*/
 class Quaternion_Interp_Traj : public Quaternion_Traj_Interface {
 
 private:

@@ -26,7 +26,7 @@
 
 #include "RobotLink.h"
 
-
+//! Prismatic Link
 class RobotLinkPrismatic : public RobotLink{
 
     private:
@@ -39,7 +39,7 @@ class RobotLinkPrismatic : public RobotLink{
 
         /*=============CONSTRUCTORS===========*/
 
-        //Full Constructor
+        //! Full Constructor
         RobotLinkPrismatic(  
                     double a, double alpha, double theta, 
                     double robot2dh_offset, bool robot2dh_flip, 
@@ -60,12 +60,12 @@ class RobotLinkPrismatic : public RobotLink{
 
         /*=======END CONSTRUCTORS===========*/
 
-        /*
+        /*!
             Clone the object
         */
         virtual RobotLinkPrismatic* clone() const override;
 
-        /*
+        /*!
             return the link offset
             Note:
                 - For prismatic link this is the joint variable,
@@ -73,25 +73,25 @@ class RobotLinkPrismatic : public RobotLink{
         */
         virtual double getDH_d() const override;
 
-        /*
+        /*!
             TODO
             ERROR IF LINK IS PRISMATIC
         */
         virtual void setDH_d( double d ) override;
 
-        /*
+        /*!
             TODO
         */
         virtual void display() const override;
 
-        /*
+        /*!
                 Retrun the joint type
                 'p' = prismatic
                 'r' = revolute
         */
         virtual char type() const override;
 
-        /*
+        /*!
             Compute the link transform matrix
             input q_DH in DH convention
         */

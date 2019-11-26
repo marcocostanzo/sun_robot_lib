@@ -28,11 +28,16 @@
 #include "Traj_Generators/Scalar_Traj_Interface.h"
 #include <math.h>
 
+//! ScalarTrajectory Traj Trapezoidal Velocity
+/*!
+    This implementation needs feasible values as input
+    \sa Trapez_Vel_Traj
+*/
 class Trapez_Traj : public Scalar_Traj_Interface {
 
 private:
 
-/*
+/*!
     No default Constructor
 */
 Trapez_Traj();
@@ -57,7 +62,7 @@ static bool checkTrapez(
 
 /*=======CONSTRUCTORS======*/
 
-/*
+/*!
     Constructor
 */
 Trapez_Traj(   
@@ -69,12 +74,12 @@ Trapez_Traj(
             );
 
 
-/*
+/*!
     Copy Constructor
 */
 Trapez_Traj( const Trapez_Traj& quint ) = default;
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual Trapez_Traj* clone() const override;
@@ -89,17 +94,17 @@ virtual Trapez_Traj* clone() const override;
 
 /*======END SETTERS==========*/
 
-/*
+/*!
     Get Position at time secs
 */
 virtual double getPosition(double secs) const override;
 
-/*
+/*!
     Get Velocity at time secs
 */
 virtual double getVelocity(double secs) const override;
 
-/*
+/*!
     Get Acceleration at time secs
 */
 virtual double getAcceleration(double secs) const override;

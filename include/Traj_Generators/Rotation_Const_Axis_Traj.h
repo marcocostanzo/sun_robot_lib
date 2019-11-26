@@ -28,11 +28,12 @@
 #include "Traj_Generators/Quaternion_Traj_Interface.h"
 #include "Traj_Generators/Scalar_Traj_Interface.h"
 
+//! Quaternion traj representing a rotation about a constant axis
 class Rotation_Const_Axis_Traj : public Quaternion_Traj_Interface {
 
 private:
 
-/*
+/*!
     Avoid Default constructor
 */
 Rotation_Const_Axis_Traj();
@@ -42,17 +43,17 @@ double _duration, _initial_time;
 
 protected:
 
-/*
+/*!
     Rotation axis
 */
 TooN::Vector<3> _axis;
 
-/*
+/*!
     Initial orientation in quaternion representation
 */
 UnitQuaternion _initial_quat;
 
-/*
+/*!
     Trajectory for the angle variable should be a traj from theta_i to theta_f
     i.e. from the initial angle to the final angle
 */
@@ -62,14 +63,14 @@ public:
 
 /*======CONSTRUCTORS=========*/
     
-/*
+/*!
     FULL Constructor
 */
 Rotation_Const_Axis_Traj( const UnitQuaternion& initial_quat, const TooN::Vector<3>& axis, const Scalar_Traj_Interface& traj_theta );
 
 Rotation_Const_Axis_Traj( const Rotation_Const_Axis_Traj& traj );
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual Rotation_Const_Axis_Traj* clone() const override;
@@ -78,22 +79,22 @@ virtual Rotation_Const_Axis_Traj* clone() const override;
 
 /*====== GETTERS =========*/
 
-/*
+/*!
     Get rotation axis
 */
 virtual TooN::Vector<3> getAxis() const;
 
-/*
+/*!
     Get initial quaternion
 */
 virtual UnitQuaternion getInitialQuat() const;
 
-/*
+/*!
     Get the final time instant
 */
 virtual double getFinalTime() const override;
 
-/*
+/*!
     Get the initial time instant
 */
 virtual double getInitialTime() const override;
@@ -102,22 +103,22 @@ virtual double getInitialTime() const override;
 
 /*====== SETTERS =========*/
 
-/*
+/*!
     Set rotation axis
 */
 virtual void setAxis( const TooN::Vector<3>& axis );
 
-/*
+/*!
     Set initial quaternion
 */
 virtual void setInitialQuat( const UnitQuaternion& initial_quat);
 
-/*
+/*!
     Change the initial time instant (translate the trajectory in the time)
 */
 virtual void changeInitialTime(double initial_time) override;
 
-/*
+/*!
     Trajectory for the angle variable should be a traj from theta_i to theta_f
     i.e. from the initial angle to the final angle
 */
@@ -127,14 +128,14 @@ virtual void setScalarTraj( const Scalar_Traj_Interface& traj_theta );
 
 /*====== TRANSFORM =========*/
 
-/*
+/*!
     Change the reference frame of the trajectory
     Apply a rotation matrix to the trajectory
     new_R_curr is the rotation matrix of the current frame w.r.t. the new frame
 */
 virtual void changeFrame( const TooN::Matrix<3,3>& new_R_curr ) override;
 
-/*
+/*!
     Change the reference frame of the trajectory
     Apply a rotation matrix to the trajectory
     new_Q_curr is the Quaterion representing the rotation matrix of the current frame w.r.t. the new frame
@@ -143,22 +144,22 @@ virtual void changeFrame( const UnitQuaternion& new_Q_curr ) override;
 
 /*====== END TRANSFORM =========*/
 
-/*
+/*!
     Get Delta quaterinion, i.e. initial_Q_now
 */
 virtual UnitQuaternion getDeltaQuat( double secs ) const;
 
-/*
+/*!
      Get Quaternion at time secs
 */
 virtual UnitQuaternion getQuaternion(double secs) const override;
 
-/*
+/*!
     Get Angular Velocity at time secs
 */
 virtual TooN::Vector<3> getVelocity(double secs) const override;
 
-/*
+/*!
     Get Angular Acceleration at time secs
 */
 virtual TooN::Vector<3> getAcceleration(double secs) const override;

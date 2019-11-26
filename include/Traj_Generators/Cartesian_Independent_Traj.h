@@ -31,11 +31,12 @@
 #include "Traj_Generators/Position_Traj_Interface.h"
 #include "Traj_Generators/Quaternion_Traj_Interface.h"
 
+//! Cartesian Traj made of independent Position an Quaternion trajs
 class Cartesian_Independent_Traj : public Cartesian_Traj_Interface {
 
 private:
 
-/*
+/*!
     Avoid Default constructor
 */
 Cartesian_Independent_Traj();
@@ -54,17 +55,17 @@ public:
 
 /*======CONSTRUCTORS=========*/
     
-/*
+/*!
     Constructor
 */
 Cartesian_Independent_Traj( const Position_Traj_Interface& pos_traj, const Quaternion_Traj_Interface& quat_traj );
 
-/*
+/*!
     Copy Constructor
 */
 Cartesian_Independent_Traj( const Cartesian_Independent_Traj& traj );
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual Cartesian_Independent_Traj* clone() const override;
@@ -73,12 +74,12 @@ virtual Cartesian_Independent_Traj* clone() const override;
 
 /*====== GETTERS =========*/
 
-/*
+/*!
     Get the final time instant
 */
 virtual double getFinalTime() const override;
 
-/*
+/*!
     Get the initial time instant
 */
 virtual double getInitialTime() const override;
@@ -97,7 +98,7 @@ virtual double getInitialTime() const override;
 
 /*====== SETTERS =========*/
 
-/*
+/*!
     Change the initial time instant (translate the trajectory in the time)
 */
 virtual void changeInitialTime(double initial_time) override;
@@ -106,7 +107,7 @@ virtual void changeInitialTime(double initial_time) override;
 
 /*====== TRANSFORM =========*/
 
-/*
+/*!
     Change the reference frame of the trajectory
     Apply an homogeneous transfrmation matrix to the trajectory
     new_T_curr is the homog transf matrix of the current frame w.r.t. the new frame
@@ -116,33 +117,33 @@ void changeFrame( const TooN::Matrix<4,4>& new_T_curr ) override;
 
 /*====== END TRANSFORM =========*/
 
-/*
+/*!
     return true if the trajectory is compleate at time secs
 */
 virtual bool isCompleate(double secs) const override;
 
-/*
+/*!
     return true if the trajectory is started at time secs
 */
 virtual bool isStarted(double secs) const override;
 
 
-/*
+/*!
     Get Position at time secs
 */
 virtual TooN::Vector<3> getPosition(double secs) const override;
 
-/*
+/*!
     Get Quaternion at time secs
 */
 virtual UnitQuaternion getQuaternion(double secs) const override;
 
-/*
+/*!
     Get Linear Velocity at time secs
 */
 virtual TooN::Vector<3> getLinearVelocity(double secs) const override;
 
-/*
+/*!
     Get Angular Velocity at time secs
 */
 virtual TooN::Vector<3> getAngularVelocity(double secs) const override;

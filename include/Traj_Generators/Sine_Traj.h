@@ -27,18 +27,19 @@
 
 #include "Traj_Generators/Scalar_Traj_Interface.h"
 
+//! Scalar Sinusoidal trajectory
 class Sine_Traj : public Scalar_Traj_Interface {
 
 private:
 
-/*
+/*!
     No default Constructor
 */
 Sine_Traj();
 
 protected:
 
-/*
+/*!
     amplitude, pulse, phase, bias
 */
 double _A,_pulse,_phi,_bias; 
@@ -47,7 +48,7 @@ public:
 
 /*=======CONSTRUCTORS======*/
 
-/*
+/*!
     Constructor
 */
 Sine_Traj(
@@ -60,12 +61,12 @@ Sine_Traj(
           );
 
 
-/*
+/*!
     Copy Constructor
 */
 Sine_Traj( const Sine_Traj& quint ) = default;
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual Sine_Traj* clone() const override;
@@ -86,17 +87,17 @@ virtual Sine_Traj* clone() const override;
 
 /*======END SETTERS==========*/
 
-/*
+/*!
     Get Position at time secs
 */
 virtual double getPosition(double secs) const override;
 
-/*
+/*!
     Get Velocity at time secs
 */
 virtual double getVelocity(double secs) const override;
 
-/*
+/*!
     Get Acceleration at time secs
 */
 virtual double getAcceleration(double secs) const override;

@@ -28,18 +28,23 @@
 #include "Traj_Generators/Scalar_Traj_Interface.h"
 #include <math.h>
 
+//! ScalarTrajectory Traj Trapezoidal Velocity
+/*!
+    All input values are feasible but the interface is more complex
+    \sa Trapez_Traj
+*/
 class Trapez_Vel_Traj : public Scalar_Traj_Interface {
 
 private:
 
-/*
+/*!
     No default Constructor
 */
 Trapez_Vel_Traj();
 
 protected:
 
-/*
+/*!
     initial position, acceleration, cruise time, cruise duration
 */
 double _pi, _ddp, _tc, _tv;
@@ -48,7 +53,7 @@ public:
 
 /*=======CONSTRUCTORS======*/
 
-/*
+/*!
     Constructor
 */
 Trapez_Vel_Traj(
@@ -60,12 +65,12 @@ Trapez_Vel_Traj(
             double initial_time = 0.0
             );
 
-/*
+/*!
     Copy Constructor
 */
 Trapez_Vel_Traj( const Trapez_Vel_Traj& traj ) = default;
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual Trapez_Vel_Traj* clone() const override;
@@ -84,17 +89,17 @@ double getCruiseTime() const;
 
 /*======END SETTERS==========*/
 
-/*
+/*!
     Get Position at time secs
 */
 virtual double getPosition(double secs) const override;
 
-/*
+/*!
     Get Velocity at time secs
 */
 virtual double getVelocity(double secs) const override;
 
-/*
+/*!
     Get Acceleration at time secs
 */
 virtual double getAcceleration(double secs) const override;

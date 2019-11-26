@@ -31,19 +31,19 @@
 class MotomanSIA5F : public Robot {
 
     public:
-        /*
+        /*!
             Full constructor
         */
         MotomanSIA5F(   const TooN::Matrix<4,4>& n_T_e, 
                     double dls_joint_speed_saturation, 
                     const std::string& name);
 
-        /*
+        /*!
             Constructor with name only
         */
         MotomanSIA5F(const std::string& name);
 
-        /*
+        /*!
             Empty constructor
         */
         MotomanSIA5F();

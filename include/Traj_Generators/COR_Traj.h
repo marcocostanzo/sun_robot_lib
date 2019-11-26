@@ -30,11 +30,12 @@
 #include "Traj_Generators/Cartesian_Traj_Interface.h"
 #include "Traj_Generators/Position_Circumference_Traj.h"
 
+//! Cartesian traj representing a rotation about a Center Of Rotation (COR)
 class COR_Traj : public Cartesian_Traj_Interface {
 
 private:
 
-/*
+/*!
     Avoid Default constructor
 */
 COR_Traj();
@@ -49,7 +50,7 @@ public:
 
 /*======CONSTRUCTORS=========*/
     
-/*
+/*!
     Constructor
 */
 COR_Traj(
@@ -65,12 +66,12 @@ COR_Traj(
     const Position_Circumference_Traj& circ_traj
     );
 
-/*
+/*!
     Copy Constructor
 */
 COR_Traj( const COR_Traj& traj ) = default;
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual COR_Traj* clone() const override;
@@ -79,12 +80,12 @@ virtual COR_Traj* clone() const override;
 
 /*====== GETTERS =========*/
 
-/*
+/*!
     Get the final time instant
 */
 virtual double getFinalTime() const override;
 
-/*
+/*!
     Get the initial time instant
 */
 virtual double getInitialTime() const override;
@@ -93,7 +94,7 @@ virtual double getInitialTime() const override;
 
 /*====== SETTERS =========*/
 
-/*
+/*!
     Change the initial time instant (translate the trajectory in the time)
 */
 virtual void changeInitialTime(double initial_time) override;
@@ -104,27 +105,27 @@ virtual void changeInitialTime(double initial_time) override;
 
 /*====== END TRANSFORM =========*/
 
-/*
+/*!
     Get Delta quaterinion, i.e. initial_Q_now
 */
 UnitQuaternion getDeltaQuat( double secs ) const;
 
-/*
+/*!
     Get Position at time secs
 */
 virtual TooN::Vector<3> getPosition(double secs) const override;
 
-/*
+/*!
     Get Quaternion at time secs
 */
 virtual UnitQuaternion getQuaternion(double secs) const override;
 
-/*
+/*!
     Get Linear Velocity at time secs
 */
 virtual TooN::Vector<3> getLinearVelocity(double secs) const override;
 
-/*
+/*!
     Get Angular Velocity at time secs
 */
 virtual TooN::Vector<3> getAngularVelocity(double secs) const override;

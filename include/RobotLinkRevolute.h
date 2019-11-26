@@ -26,7 +26,7 @@
 
 #include "RobotLink.h"
 
-
+//! Revolute Link
 class RobotLinkRevolute : public RobotLink{
 
     private:
@@ -39,7 +39,7 @@ class RobotLinkRevolute : public RobotLink{
 
         /*=============CONSTRUCTORS===========*/
 
-        //Full Constructor
+        //! Full Constructor
         RobotLinkRevolute(  
                     double a, double alpha, double d, 
                     double robot2dh_offset, bool robot2dh_flip, 
@@ -60,12 +60,12 @@ class RobotLinkRevolute : public RobotLink{
 
         /*=======END CONSTRUCTORS===========*/
 
-        /*
+        /*!
             Clone the object
         */
         virtual RobotLinkRevolute* clone() const override;
 
-        /*
+        /*!
                 return the link angle
                 Note:
                     - For revolute link this is the joint variable,
@@ -73,25 +73,25 @@ class RobotLinkRevolute : public RobotLink{
         */
         virtual double getDH_theta() const override;
 
-        /*
+        /*!
                 TODO
                 ERROR IF LINK IS REVOLUTE
         */
         virtual void setDH_theta( double theta ) override;
 
-        /*
+        /*!
             TODO
         */
         virtual void display() const override;
 
-        /*
+        /*!
                 Retrun the joint type
                 'p' = prismatic
                 'r' = revolute
         */
         virtual char type() const override;
 
-        /*
+        /*!
             Compute the link transform matrix
             input qR in robot convention
         */

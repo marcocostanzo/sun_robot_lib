@@ -30,28 +30,29 @@
 
 #define QUINTIC_POLY_EPS_TIME 0.001
 
+//! Scalar trajectory implemented as a Quintic Poly
 class Quintic_Poly_Traj : public Scalar_Traj_Interface {
 
 private:
 
-/*
+/*!
     No default Constructor
 */
 Quintic_Poly_Traj();
 
 protected:
 
-/*
+/*!
     Poly coeff of p(t)
 */
 TooN::Vector<6> _poly_coeff; 
 
-/*
+/*!
     Poly coeff of dp(t)
 */
 TooN::Vector<5> _vel_poly_coeff; 
 
-/*
+/*!
     Poly coeff of ddp(t)
 */
 TooN::Vector<4> _acc_poly_coeff; 
@@ -67,7 +68,7 @@ public:
 
 /*=======CONSTRUCTORS======*/
 
-/*
+/*!
     Constructor
 */
 Quintic_Poly_Traj(   
@@ -82,12 +83,12 @@ Quintic_Poly_Traj(
                     );
 
 
-/*
+/*!
     Copy Constructor
 */
 Quintic_Poly_Traj( const Quintic_Poly_Traj& quint ) = default;
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual Quintic_Poly_Traj* clone() const override;
@@ -124,29 +125,29 @@ virtual void setInitialAcceleration( double ai );
 
 virtual void setFinalAcceleration( double af );
 
-/*
+/*!
     Change the initial time instant (translate the trajectory in the time)
 */
 virtual void changeInitialTime(double initial_time) override; 
 
 /*======END SETTERS==========*/
 
-/*
+/*!
     Get Position at time secs
 */
 virtual double getPosition(double secs) const override;
 
-/*
+/*!
     Get Velocity at time secs
 */
 virtual double getVelocity(double secs) const override;
 
-/*
+/*!
     Get Acceleration at time secs
 */
 virtual double getAcceleration(double secs) const override;
 
-/*
+/*!
     Update poly coefficients
 */
 virtual void updateCoefficients();

@@ -30,11 +30,12 @@
 #include "Traj_Generators/Traj_Generator_Interface.h"
 #include "UnitQuaternion.h"
 
+//! Abstract clas representing a Cartesian traj (Position + UnitQuaternion)
 class Cartesian_Traj_Interface : public Traj_Generator_Interface {
 
 private:
 
-/*
+/*!
     Avoid Default constructor
 */
 Cartesian_Traj_Interface();
@@ -47,19 +48,19 @@ public:
 
 /*======CONSTRUCTORS=========*/
     
-/*
+/*!
     Constructor
 */
 Cartesian_Traj_Interface(double duration, double initial_time = 0.0)
     :Traj_Generator_Interface( duration, initial_time ),
     _mask(TooN::Ones) {}
 
-/*
+/*!
     Copy Constructor
 */
 //Cartesian_Traj_Interface( const Cartesian_Traj_Interface& traj );
 
-/*
+/*!
     Clone the object in the heap
 */
 virtual Cartesian_Traj_Interface* clone() const = 0;
@@ -68,7 +69,7 @@ virtual Cartesian_Traj_Interface* clone() const = 0;
 
 /*====== GETTERS =========*/
 
-/*
+/*!
     Get the mask at time secs, if mask[i]=0 then the i-th cartesian coordinate should not be taken into account
     NB: last 3 values are related to a quaternion...
 */
@@ -80,7 +81,7 @@ virtual TooN::Vector<6,int> getMask(double secs) const{
 
 /*====== SETTERS =========*/
 
-/*
+/*!
     Get the mask at time secs, if mask[i]=0 then the i-th cartesian coordinate should not be taken into account
     NB: last 3 values are related to a quaternion...
 */
@@ -92,7 +93,7 @@ virtual void setMask(TooN::Vector<6,int> mask){
 
 /*====== TRANSFORM =========*/
 
-/*
+/*!
     Change the reference frame of the trajectory
     Apply an homogeneous transfrmation matrix to the trajectory
     new_T_curr is the homog transf matrix of the current frame w.r.t. the new frame
@@ -102,7 +103,7 @@ virtual void changeFrame( const TooN::Matrix<4,4>& new_T_curr ) {
     exit(-1);
 }
 
-/*
+/*!
     Change the reference frame of the trajectory
     Apply a rotation matrix to the trajectory
     new_R_curr is the rotation matrix of the current frame w.r.t. the new frame
@@ -111,7 +112,7 @@ virtual void changeFrame( const TooN::Matrix<3,3>& new_R_curr ) {
     changeFrame( r2t( new_R_curr ) );
 }
 
-/*
+/*!
     Change the reference frame of the trajectory
     Apply a rotation matrix to the trajectory
     new_Q_curr is the Quaterion representing the rotation matrix of the current frame w.r.t. the new frame
@@ -123,27 +124,27 @@ virtual void changeFrame( const UnitQuaternion& new_Q_curr ) {
 /*====== END TRANSFORM =========*/
 
 
-/*
+/*!
     Get Position at time secs
 */
 virtual TooN::Vector<3> getPosition(double secs) const = 0;
 
-/*
+/*!
     Get Quaternion at time secs
 */
 virtual UnitQuaternion getQuaternion(double secs) const = 0;
 
-/*
+/*!
     Get Linear Velocity at time secs
 */
 virtual TooN::Vector<3> getLinearVelocity(double secs) const = 0;
 
-/*
+/*!
     Get Angular Velocity at time secs
 */
 virtual TooN::Vector<3> getAngularVelocity(double secs) const = 0;
 
-/*
+/*!
     Get Twist Velocity at time secs [ v , w ]^T
 */
 virtual TooN::Vector<6> getTwist(double secs) const {
