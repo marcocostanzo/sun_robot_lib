@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['quaternion_5finterp_5ftraj',['Quaternion_Interp_Traj',['../classQuaternion__Interp__Traj.html#a25520f9a68bfb9670203395320b8bff1',1,'Quaternion_Interp_Traj::Quaternion_Interp_Traj(const UnitQuaternion &amp;qi, const UnitQuaternion &amp;qf, const Scalar_Traj_Interface &amp;traj_s)'],['../classQuaternion__Interp__Traj.html#ab0bb9c35a9cdfbc4a8b99093047f30af',1,'Quaternion_Interp_Traj::Quaternion_Interp_Traj(const Quaternion_Interp_Traj &amp;traj)'],['../Quaternion__Interp__Traj_8cpp.html#ac773d1482372bf4181738836f4a277d4',1,'Quaternion_Interp_Traj():&#160;Quaternion_Interp_Traj.cpp']]],
+  ['quaternion_5ftraj_5finterface',['Quaternion_Traj_Interface',['../classQuaternion__Traj__Interface.html#aa00700438cb87e2c75bd00997da17564',1,'Quaternion_Traj_Interface']]],
+  ['quintic_5fpoly_5ftraj',['Quintic_Poly_Traj',['../classQuintic__Poly__Traj.html#a0c7493bbdff29e74b2cc11f786e9cf35',1,'Quintic_Poly_Traj::Quintic_Poly_Traj(double duration, double initial_position, double final_position, double initial_time=0.0, double initial_velocity=0.0, double final_velocity=0.0, double initial_acceleration=0.0, double final_acceleration=0.0)'],['../classQuintic__Poly__Traj.html#a8e61c9f8acf14ac3dfd2c2c88e14a536',1,'Quintic_Poly_Traj::Quintic_Poly_Traj(const Quintic_Poly_Traj &amp;quint)=default']]]
+];

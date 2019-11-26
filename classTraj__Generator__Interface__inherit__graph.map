@@ -1,0 +1,18 @@
+<map id="Traj_Generator_Interface" name="Traj_Generator_Interface">
+<area shape="rect" id="node2" href="$classCartesian__Traj__Interface.html" title="Cartesian_Traj_Interface" alt="" coords="223,56,389,83"/>
+<area shape="rect" id="node5" href="$classPosition__Traj__Interface.html" title="Position_Traj_Interface" alt="" coords="228,157,384,184"/>
+<area shape="rect" id="node8" href="$classQuaternion__Traj__Interface.html" title="Quaternion_Traj_Interface" alt="" coords="220,233,392,260"/>
+<area shape="rect" id="node11" href="$classScalar__Traj__Interface.html" title="Scalar_Traj_Interface" alt="" coords="233,360,379,387"/>
+<area shape="rect" id="node16" href="$classVector__Traj__Interface.html" title="Vector_Traj_Interface" alt="" coords="233,461,379,488"/>
+<area shape="rect" id="node3" href="$classCartesian__Independent__Traj.html" title="Cartesian_Independent_Traj" alt="" coords="443,5,628,32"/>
+<area shape="rect" id="node4" href="$classCOR__Traj.html" title="COR_Traj" alt="" coords="495,56,576,83"/>
+<area shape="rect" id="node6" href="$classLine__Segment__Traj.html" title="Line_Segment_Traj" alt="" coords="468,107,603,133"/>
+<area shape="rect" id="node7" href="$classPosition__Circumference__Traj.html" title="Position_Circumference_Traj" alt="" coords="440,157,631,184"/>
+<area shape="rect" id="node9" href="$classQuaternion__Interp__Traj.html" title="Quaternion_Interp_Traj" alt="" coords="458,208,613,235"/>
+<area shape="rect" id="node10" href="$classRotation__Const__Axis__Traj.html" title="Rotation_Const_Axis_Traj" alt="" coords="448,259,623,285"/>
+<area shape="rect" id="node12" href="$classQuintic__Poly__Traj.html" title="Quintic_Poly_Traj" alt="" coords="473,309,598,336"/>
+<area shape="rect" id="node13" href="$classSine__Traj.html" title="Sine_Traj" alt="" coords="497,360,574,387"/>
+<area shape="rect" id="node14" href="$classTrapez__Traj.html" title="Trapez_Traj" alt="" coords="490,411,581,437"/>
+<area shape="rect" id="node15" href="$classTrapez__Vel__Traj.html" title="Trapez_Vel_Traj" alt="" coords="477,461,594,488"/>
+<area shape="rect" id="node17" href="$classVector__Independent__Traj.html" title="Vector_Independent_Traj" alt="" coords="452,512,619,539"/>
+</map>

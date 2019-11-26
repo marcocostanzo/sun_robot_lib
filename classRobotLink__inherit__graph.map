@@ -1,0 +1,4 @@
+<map id="RobotLink" name="RobotLink">
+<area shape="rect" id="node2" href="$classRobotLinkPrismatic.html" title="RobotLinkPrismatic" alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="$classRobotLinkRevolute.html" title="RobotLinkRevolute" alt="" coords="165,80,299,107"/>
+</map>
