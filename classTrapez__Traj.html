@@ -93,14 +93,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>ScalarTrajectory Traj Trapezoidal Velocity.  
+ <a href="classTrapez__Traj.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Trapez_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrapez__Traj__inherit__graph.png" border="0" usemap="#Trapez__Traj_inherit__map" alt="Inheritance graph"/></div>
 <map name="Trapez__Traj_inherit__map" id="Trapez__Traj_inherit__map">
-<area shape="rect" id="node2" href="classScalar__Traj__Interface.html" title="Scalar_Traj_Interface" alt="" coords="15,80,162,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classScalar__Traj__Interface.html" title="Abstract class representing a Scalar traj. " alt="" coords="15,80,162,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -108,8 +111,8 @@ Collaboration diagram for Trapez_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrapez__Traj__coll__graph.png" border="0" usemap="#Trapez__Traj_coll__map" alt="Collaboration graph"/></div>
 <map name="Trapez__Traj_coll__map" id="Trapez__Traj_coll__map">
-<area shape="rect" id="node2" href="classScalar__Traj__Interface.html" title="Scalar_Traj_Interface" alt="" coords="15,80,162,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classScalar__Traj__Interface.html" title="Abstract class representing a Scalar traj. " alt="" coords="15,80,162,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -170,8 +173,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00031">31</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
+<div class="textblock"><p>ScalarTrajectory Traj Trapezoidal Velocity. </p>
+<p>This implementation needs feasible values as input </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classTrapez__Vel__Traj.html" title="ScalarTrajectory Traj Trapezoidal Velocity. ">Trapez_Vel_Traj</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00036">36</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5a8fd20ff2a0e429d7005c6bb16362f8"></a>
 <div class="memitem">
@@ -214,6 +219,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor </p>
 
 <p>Definition at line <a class="el" href="Trapez__Traj_8cpp_source.html#l00052">52</a> of file <a class="el" href="Trapez__Traj_8cpp_source.html">Trapez_Traj.cpp</a>.</p>
 
@@ -240,6 +246,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Copy Constructor </p>
 
 </div>
 </div>
@@ -312,6 +319,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classScalar__Traj__Interface.html#a3f73a1c87b303e592809c6118ae8ad25">Scalar_Traj_Interface</a>.</p>
 
@@ -340,6 +348,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Acceleration at time secs </p>
 
 <p>Implements <a class="el" href="classScalar__Traj__Interface.html#aea1f2f02bb4c5d86f53c7621bd9d02ce">Scalar_Traj_Interface</a>.</p>
 
@@ -368,6 +377,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Position at time secs </p>
 
 <p>Implements <a class="el" href="classScalar__Traj__Interface.html#a9f9ba69508c3cbfd3313b284d0c1d48a">Scalar_Traj_Interface</a>.</p>
 
@@ -396,6 +406,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classScalar__Traj__Interface.html#a03fc8d84c7d7d6d4aa49e2e1726d3053">Scalar_Traj_Interface</a>.</p>
 
@@ -422,7 +433,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00047">47</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00052">52</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -444,7 +455,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00046">46</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00051">51</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -466,7 +477,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00046">46</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00051">51</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -488,7 +499,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00046">46</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Trapez__Traj_8h_source.html#l00051">51</a> of file <a class="el" href="Trapez__Traj_8h_source.html">Trapez_Traj.h</a>.</p>
 
 </div>
 </div>

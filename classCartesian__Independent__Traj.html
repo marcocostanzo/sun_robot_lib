@@ -92,14 +92,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Cartesian Traj made of independent Position an Quaternion trajs.  
+ <a href="classCartesian__Independent__Traj.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Cartesian__Independent__Traj_8h_source.html">Cartesian_Independent_Traj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Cartesian_Independent_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCartesian__Independent__Traj__inherit__graph.png" border="0" usemap="#Cartesian__Independent__Traj_inherit__map" alt="Inheritance graph"/></div>
 <map name="Cartesian__Independent__Traj_inherit__map" id="Cartesian__Independent__Traj_inherit__map">
-<area shape="rect" id="node2" href="classCartesian__Traj__Interface.html" title="Cartesian_Traj_Interface" alt="" coords="15,80,181,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="15,5,181,32"/>
+<area shape="rect" id="node2" href="classCartesian__Traj__Interface.html" title="Abstract clas representing a Cartesian traj (Position + UnitQuaternion) " alt="" coords="15,80,181,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="15,5,181,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,8 +110,8 @@ Collaboration diagram for Cartesian_Independent_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCartesian__Independent__Traj__coll__graph.png" border="0" usemap="#Cartesian__Independent__Traj_coll__map" alt="Collaboration graph"/></div>
 <map name="Cartesian__Independent__Traj_coll__map" id="Cartesian__Independent__Traj_coll__map">
-<area shape="rect" id="node2" href="classCartesian__Traj__Interface.html" title="Cartesian_Traj_Interface" alt="" coords="15,80,181,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="15,5,181,32"/>
+<area shape="rect" id="node2" href="classCartesian__Traj__Interface.html" title="Abstract clas representing a Cartesian traj (Position + UnitQuaternion) " alt="" coords="15,80,181,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="15,5,181,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -177,8 +180,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Cartesian__Independent__Traj_8h_source.html#l00034">34</a> of file <a class="el" href="Cartesian__Independent__Traj_8h_source.html">Cartesian_Independent_Traj.h</a>.</p>
+<div class="textblock"><p>Cartesian Traj made of independent Position an Quaternion trajs. </p>
+
+<p>Definition at line <a class="el" href="Cartesian__Independent__Traj_8h_source.html#l00035">35</a> of file <a class="el" href="Cartesian__Independent__Traj_8h_source.html">Cartesian_Independent_Traj.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0d3cb9e94b57ca40a757013904d849c8"></a>
 <div class="memitem">
@@ -203,6 +207,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor </p>
 
 <p>Definition at line <a class="el" href="Cartesian__Independent__Traj_8cpp_source.html#l00035">35</a> of file <a class="el" href="Cartesian__Independent__Traj_8cpp_source.html">Cartesian_Independent_Traj.cpp</a>.</p>
 
@@ -221,6 +226,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Copy Constructor </p>
 
 <p>Definition at line <a class="el" href="Cartesian__Independent__Traj_8cpp_source.html#l00043">43</a> of file <a class="el" href="Cartesian__Independent__Traj_8cpp_source.html">Cartesian_Independent_Traj.cpp</a>.</p>
 
@@ -248,6 +254,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the reference frame of the trajectory Apply an homogeneous transfrmation matrix to the trajectory new_T_curr is the homog transf matrix of the current frame w.r.t. the new frame </p>
 
 <p>Reimplemented from <a class="el" href="classCartesian__Traj__Interface.html#a785a56bf83cc85f36110da23ae623dd4">Cartesian_Traj_Interface</a>.</p>
 
@@ -276,6 +283,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the initial time instant (translate the trajectory in the time) </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#af184539b8285ed9c136e760a25d4c7da">Traj_Generator_Interface</a>.</p>
 
@@ -303,6 +311,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classCartesian__Traj__Interface.html#af172af77f54143333043f16efcf13a06">Cartesian_Traj_Interface</a>.</p>
 
@@ -331,6 +340,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Angular Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classCartesian__Traj__Interface.html#ac809d695d589a16637632f162f794294">Cartesian_Traj_Interface</a>.</p>
 
@@ -358,6 +368,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the final time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#a7366070da9421b46a73c49b4bc389d54">Traj_Generator_Interface</a>.</p>
 
@@ -385,6 +396,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the initial time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#ad3ab30f64cb94ca3957420a6afdd1a28">Traj_Generator_Interface</a>.</p>
 
@@ -413,6 +425,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Linear Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classCartesian__Traj__Interface.html#abbd44057e31dc9254cec08670c8e89b1">Cartesian_Traj_Interface</a>.</p>
 
@@ -441,6 +454,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Position at time secs </p>
 
 <p>Implements <a class="el" href="classCartesian__Traj__Interface.html#aa2bdc5272dd2e599a9b64e7aad392597">Cartesian_Traj_Interface</a>.</p>
 
@@ -469,6 +483,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Quaternion at time secs </p>
 
 <p>Implements <a class="el" href="classCartesian__Traj__Interface.html#ad45677f3a906e38f0f6529d45507a473">Cartesian_Traj_Interface</a>.</p>
 
@@ -497,6 +512,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return true if the trajectory is compleate at time secs </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#a39b42f9452454d4103c5c16839331477">Traj_Generator_Interface</a>.</p>
 
@@ -525,6 +541,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return true if the trajectory is started at time secs </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#ad81c4ff084b8d43489d35370330fc9d9">Traj_Generator_Interface</a>.</p>
 
@@ -551,7 +568,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Cartesian__Independent__Traj_8h_source.html#l00049">49</a> of file <a class="el" href="Cartesian__Independent__Traj_8h_source.html">Cartesian_Independent_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Cartesian__Independent__Traj_8h_source.html#l00050">50</a> of file <a class="el" href="Cartesian__Independent__Traj_8h_source.html">Cartesian_Independent_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -573,7 +590,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Cartesian__Independent__Traj_8h_source.html#l00051">51</a> of file <a class="el" href="Cartesian__Independent__Traj_8h_source.html">Cartesian_Independent_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Cartesian__Independent__Traj_8h_source.html#l00052">52</a> of file <a class="el" href="Cartesian__Independent__Traj_8h_source.html">Cartesian_Independent_Traj.h</a>.</p>
 
 </div>
 </div>

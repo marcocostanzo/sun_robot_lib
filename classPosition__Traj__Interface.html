@@ -92,15 +92,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Abstract class representing a Position traj (3D)  
+ <a href="classPosition__Traj__Interface.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Position_Traj_Interface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPosition__Traj__Interface__inherit__graph.png" border="0" usemap="#Position__Traj__Interface_inherit__map" alt="Inheritance graph"/></div>
 <map name="Position__Traj__Interface_inherit__map" id="Position__Traj__Interface_inherit__map">
-<area shape="rect" id="node3" href="classLine__Segment__Traj.html" title="Line_Segment_Traj" alt="" coords="5,155,140,181"/>
-<area shape="rect" id="node4" href="classPosition__Circumference__Traj.html" title="Position_Circumference_Traj" alt="" coords="164,155,355,181"/>
-<area shape="rect" id="node2" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="83,5,249,32"/>
+<area shape="rect" id="node3" href="classLine__Segment__Traj.html" title="Position traj representing a Line Segment. " alt="" coords="5,155,140,181"/>
+<area shape="rect" id="node4" href="classPosition__Circumference__Traj.html" title="Position traj representing a Circumference. " alt="" coords="164,155,355,181"/>
+<area shape="rect" id="node2" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="83,5,249,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -108,7 +111,7 @@ Collaboration diagram for Position_Traj_Interface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPosition__Traj__Interface__coll__graph.png" border="0" usemap="#Position__Traj__Interface_coll__map" alt="Collaboration graph"/></div>
 <map name="Position__Traj__Interface_coll__map" id="Position__Traj__Interface_coll__map">
-<area shape="rect" id="node2" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -161,8 +164,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00032">32</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
+<div class="textblock"><p>Abstract class representing a Position traj (3D) </p>
+
+<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00033">33</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ace954b7f265119560a841f40830fc85d"></a>
 <div class="memitem">
@@ -195,8 +199,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructor with duration and initial time as input </p>
 
-<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00052">52</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00053">53</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
 
 </div>
 </div>
@@ -222,10 +227,11 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the reference frame of the trajectory Apply an homogeneous transfrmation matrix to the trajectory new_T_curr is the homog transf matrix of the current frame w.r.t. the new frame </p>
 
 <p>Reimplemented in <a class="el" href="classPosition__Circumference__Traj.html#a5fb90370e79c750b17492c5d257ed498">Position_Circumference_Traj</a>, and <a class="el" href="classLine__Segment__Traj.html#a5468ddcf76e2477c96bafdbdad1f4a92">Line_Segment_Traj</a>.</p>
 
-<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00095">95</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00096">96</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
 
 </div>
 </div>
@@ -250,8 +256,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the reference frame of the trajectory Apply a rotation matrix to the trajectory new_R_curr is the rotation matrix of the current frame w.r.t. the new frame </p>
 
-<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00105">105</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00106">106</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
 
 </div>
 </div>
@@ -275,6 +282,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classTraj__Generator__Interface.html#a48ac97d67031b442e76e7d8ff4847741">Traj_Generator_Interface</a>.</p>
 
@@ -303,6 +311,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Acceleration at time secs </p>
 
 <p>Implemented in <a class="el" href="classPosition__Circumference__Traj.html#a1cf8c48540d9860d4c8c848d71a2ee7c">Position_Circumference_Traj</a>, and <a class="el" href="classLine__Segment__Traj.html#a02fda91ed6c6e4a9f76063ae93955bca">Line_Segment_Traj</a>.</p>
 
@@ -329,8 +338,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the mask at time secs, if mask[i]=0 then the i-th cartesian coordinate should not be taken into account </p>
 
-<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00071">71</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00072">72</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
 
 </div>
 </div>
@@ -355,6 +365,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Position at time secs </p>
 
 <p>Implemented in <a class="el" href="classPosition__Circumference__Traj.html#a77ec9ce22d91afedcdb3bcbfa45a5bf9">Position_Circumference_Traj</a>, and <a class="el" href="classLine__Segment__Traj.html#af6d4a4a90e4108810ae33d97fe265971">Line_Segment_Traj</a>.</p>
 
@@ -381,6 +392,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Velocity at time secs </p>
 
 <p>Implemented in <a class="el" href="classPosition__Circumference__Traj.html#a9eb00fd4cf0740cfba423da98e02d887">Position_Circumference_Traj</a>, and <a class="el" href="classLine__Segment__Traj.html#a02b83bb2e8df418ea63d318da80b27d6">Line_Segment_Traj</a>.</p>
 
@@ -407,8 +419,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the mask at time secs, if mask[i]=0 then the i-th cartesian coordinate should not be taken into account </p>
 
-<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00082">82</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00083">83</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
 
 </div>
 </div>
@@ -431,7 +444,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00043">43</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Traj__Interface_8h_source.html#l00044">44</a> of file <a class="el" href="Position__Traj__Interface_8h_source.html">Position_Traj_Interface.h</a>.</p>
 
 </div>
 </div>

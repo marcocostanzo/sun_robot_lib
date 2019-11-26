@@ -92,14 +92,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Position traj representing a Line Segment.  
+ <a href="classLine__Segment__Traj.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Line_Segment_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLine__Segment__Traj__inherit__graph.png" border="0" usemap="#Line__Segment__Traj_inherit__map" alt="Inheritance graph"/></div>
 <map name="Line__Segment__Traj_inherit__map" id="Line__Segment__Traj_inherit__map">
-<area shape="rect" id="node2" href="classPosition__Traj__Interface.html" title="Position_Traj_Interface" alt="" coords="11,80,167,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classPosition__Traj__Interface.html" title="Abstract class representing a Position traj (3D) " alt="" coords="11,80,167,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,8 +110,8 @@ Collaboration diagram for Line_Segment_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLine__Segment__Traj__coll__graph.png" border="0" usemap="#Line__Segment__Traj_coll__map" alt="Collaboration graph"/></div>
 <map name="Line__Segment__Traj_coll__map" id="Line__Segment__Traj_coll__map">
-<area shape="rect" id="node2" href="classPosition__Traj__Interface.html" title="Position_Traj_Interface" alt="" coords="11,80,167,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classPosition__Traj__Interface.html" title="Abstract class representing a Position traj (3D) " alt="" coords="11,80,167,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -187,8 +190,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Line__Segment__Traj_8h_source.html#l00031">31</a> of file <a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>.</p>
+<div class="textblock"><p>Position traj representing a Line Segment. </p>
+
+<p>Definition at line <a class="el" href="Line__Segment__Traj_8h_source.html#l00032">32</a> of file <a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a34804343ed12bc77e973a23c7a0f6781"></a>
 <div class="memitem">
@@ -219,6 +223,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Full Constructor </p>
 
 </div>
 </div>
@@ -235,6 +240,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Copy Constructor </p>
 
 <p>Definition at line <a class="el" href="Line__Segment__Traj_8cpp_source.html#l00045">45</a> of file <a class="el" href="Line__Segment__Traj_8cpp_source.html">Line_Segment_Traj.cpp</a>.</p>
 
@@ -262,6 +268,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the reference frame of the trajectory Apply an homogeneous transfrmation matrix to the trajectory new_T_curr is the homog transf matrix of the current frame w.r.t. the new frame </p>
 
 <p>Reimplemented from <a class="el" href="classPosition__Traj__Interface.html#a97702213c4504236ce7931a33132d3cb">Position_Traj_Interface</a>.</p>
 
@@ -290,6 +297,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the initial time instant (translate the trajectory in the time) </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#af184539b8285ed9c136e760a25d4c7da">Traj_Generator_Interface</a>.</p>
 
@@ -317,6 +325,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classPosition__Traj__Interface.html#af16ef2fd89ff580de0cf772ce111a1a9">Position_Traj_Interface</a>.</p>
 
@@ -345,6 +354,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Acceleration at time secs </p>
 
 <p>Implements <a class="el" href="classPosition__Traj__Interface.html#a7a72946db200cba2ae75877a447bcd18">Position_Traj_Interface</a>.</p>
 
@@ -372,6 +382,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get direction of the Line Segment as unit vector </p>
 
 <p>Definition at line <a class="el" href="Line__Segment__Traj_8cpp_source.html#l00066">66</a> of file <a class="el" href="Line__Segment__Traj_8cpp_source.html">Line_Segment_Traj.cpp</a>.</p>
 
@@ -397,6 +408,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="Line__Segment__Traj_8cpp_source.html#l00088">88</a> of file <a class="el" href="Line__Segment__Traj_8cpp_source.html">Line_Segment_Traj.cpp</a>.</p>
 
@@ -422,6 +434,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the final time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#a7366070da9421b46a73c49b4bc389d54">Traj_Generator_Interface</a>.</p>
 
@@ -449,6 +462,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="Line__Segment__Traj_8cpp_source.html#l00081">81</a> of file <a class="el" href="Line__Segment__Traj_8cpp_source.html">Line_Segment_Traj.cpp</a>.</p>
 
@@ -474,6 +488,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the initial time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#ad3ab30f64cb94ca3957420a6afdd1a28">Traj_Generator_Interface</a>.</p>
 
@@ -501,6 +516,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get length of the segment </p>
 
 <p>Definition at line <a class="el" href="Line__Segment__Traj_8cpp_source.html#l00074">74</a> of file <a class="el" href="Line__Segment__Traj_8cpp_source.html">Line_Segment_Traj.cpp</a>.</p>
 
@@ -527,6 +543,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Position at time secs </p>
 
 <p>Implements <a class="el" href="classPosition__Traj__Interface.html#a9951c9ce80c6fe1472c7db82e5a205e0">Position_Traj_Interface</a>.</p>
 
@@ -555,6 +572,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classPosition__Traj__Interface.html#a59080e55d9f48526b0b15f8d83ee59b6">Position_Traj_Interface</a>.</p>
 
@@ -583,6 +601,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="Line__Segment__Traj_8cpp_source.html#l00132">132</a> of file <a class="el" href="Line__Segment__Traj_8cpp_source.html">Line_Segment_Traj.cpp</a>.</p>
 
@@ -609,6 +628,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="Line__Segment__Traj_8cpp_source.html#l00125">125</a> of file <a class="el" href="Line__Segment__Traj_8cpp_source.html">Line_Segment_Traj.cpp</a>.</p>
 
@@ -635,6 +655,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set the scalar trajectory Trajectory for the scalar s variable should be a traj from 0 to 1 s = 0 -&gt; _pi &amp; s = 1 -&gt; _pf Note: Velocities and accelerations Since the s is normalized using <a class="el" href="classLine__Segment__Traj.html#a846a2f2c29eaec015bfd30c46f79ce2c">getLength()</a> also the ds and dds have to be normalized e.g. _vi = dsi / line_segment_traj.getLength() where line_segment_traj is this object </p>
 
 <p>Definition at line <a class="el" href="Line__Segment__Traj_8cpp_source.html#l00118">118</a> of file <a class="el" href="Line__Segment__Traj_8cpp_source.html">Line_Segment_Traj.cpp</a>.</p>
 
@@ -658,8 +679,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Final Position </p>
 
-<p>Definition at line <a class="el" href="Line__Segment__Traj_8h_source.html#l00054">54</a> of file <a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Line__Segment__Traj_8h_source.html#l00055">55</a> of file <a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -680,8 +702,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Initial Position </p>
 
-<p>Definition at line <a class="el" href="Line__Segment__Traj_8h_source.html#l00049">49</a> of file <a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Line__Segment__Traj_8h_source.html#l00050">50</a> of file <a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -702,8 +725,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Trajectory for the scalar s variable should be a traj from 0 to 1 s = 0 -&gt; _pi &amp; s = 1 -&gt; _pf </p>
 
-<p>Definition at line <a class="el" href="Line__Segment__Traj_8h_source.html#l00060">60</a> of file <a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Line__Segment__Traj_8h_source.html#l00061">61</a> of file <a class="el" href="Line__Segment__Traj_8h_source.html">Line_Segment_Traj.h</a>.</p>
 
 </div>
 </div>

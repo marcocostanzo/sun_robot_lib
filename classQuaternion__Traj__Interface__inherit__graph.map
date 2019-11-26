@@ -1,5 +1,5 @@
 <map id="Quaternion_Traj_Interface" name="Quaternion_Traj_Interface">
-<area shape="rect" id="node3" href="$classQuaternion__Interp__Traj.html" title="Quaternion_Interp_Traj" alt="" coords="5,155,160,181"/>
-<area shape="rect" id="node4" href="$classRotation__Const__Axis__Traj.html" title="Rotation_Const_Axis_Traj" alt="" coords="185,155,359,181"/>
-<area shape="rect" id="node2" href="$classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="94,5,261,32"/>
+<area shape="rect" id="node3" href="$classQuaternion__Interp__Traj.html" title="WARNING THIS CLASS IS NOT READY USE Rotation_Const_Axis_Traj. " alt="" coords="5,155,160,181"/>
+<area shape="rect" id="node4" href="$classRotation__Const__Axis__Traj.html" title="Quaternion traj representing a rotation about a constant axis. " alt="" coords="185,155,359,181"/>
+<area shape="rect" id="node2" href="$classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="94,5,261,32"/>
 </map>

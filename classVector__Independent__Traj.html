@@ -92,14 +92,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Vectorial Trajectory made of Independent Scalar trajs.  
+ <a href="classVector__Independent__Traj.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Vector__Independent__Traj_8h_source.html">Vector_Independent_Traj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Vector_Independent_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classVector__Independent__Traj__inherit__graph.png" border="0" usemap="#Vector__Independent__Traj_inherit__map" alt="Inheritance graph"/></div>
 <map name="Vector__Independent__Traj_inherit__map" id="Vector__Independent__Traj_inherit__map">
-<area shape="rect" id="node2" href="classVector__Traj__Interface.html" title="Vector_Traj_Interface" alt="" coords="15,80,162,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classVector__Traj__Interface.html" title="Abstract class representing a generic Vectorial Traj. " alt="" coords="15,80,162,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,8 +110,8 @@ Collaboration diagram for Vector_Independent_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classVector__Independent__Traj__coll__graph.png" border="0" usemap="#Vector__Independent__Traj_coll__map" alt="Collaboration graph"/></div>
 <map name="Vector__Independent__Traj_coll__map" id="Vector__Independent__Traj_coll__map">
-<area shape="rect" id="node2" href="classVector__Traj__Interface.html" title="Vector_Traj_Interface" alt="" coords="15,80,162,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classVector__Traj__Interface.html" title="Abstract class representing a generic Vectorial Traj. " alt="" coords="15,80,162,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -168,8 +171,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Vector__Independent__Traj_8h_source.html#l00031">31</a> of file <a class="el" href="Vector__Independent__Traj_8h_source.html">Vector_Independent_Traj.h</a>.</p>
+<div class="textblock"><p>Vectorial Trajectory made of Independent Scalar trajs. </p>
+
+<p>Definition at line <a class="el" href="Vector__Independent__Traj_8h_source.html#l00032">32</a> of file <a class="el" href="Vector__Independent__Traj_8h_source.html">Vector_Independent_Traj.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab11e80f796e895f8aa286d8195953c75"></a>
 <div class="memitem">
@@ -183,6 +187,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Void Constructor </p>
 
 <p>Definition at line <a class="el" href="Vector__Independent__Traj_8cpp_source.html#l00034">34</a> of file <a class="el" href="Vector__Independent__Traj_8cpp_source.html">Vector_Independent_Traj.cpp</a>.</p>
 
@@ -201,6 +206,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Full constructor </p>
 
 <p>Definition at line <a class="el" href="Vector__Independent__Traj_8cpp_source.html#l00039">39</a> of file <a class="el" href="Vector__Independent__Traj_8cpp_source.html">Vector_Independent_Traj.cpp</a>.</p>
 
@@ -229,6 +235,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor that creates n equal trajectories </p>
 
 <p>Definition at line <a class="el" href="Vector__Independent__Traj_8cpp_source.html#l00050">50</a> of file <a class="el" href="Vector__Independent__Traj_8cpp_source.html">Vector_Independent_Traj.cpp</a>.</p>
 
@@ -247,6 +254,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Copy Constructor </p>
 
 <p>Definition at line <a class="el" href="Vector__Independent__Traj_8cpp_source.html#l00061">61</a> of file <a class="el" href="Vector__Independent__Traj_8cpp_source.html">Vector_Independent_Traj.cpp</a>.</p>
 
@@ -274,6 +282,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the initial time instant (translate all the trajectories in the time) </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#af184539b8285ed9c136e760a25d4c7da">Traj_Generator_Interface</a>.</p>
 
@@ -301,6 +310,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classVector__Traj__Interface.html#a4aef2bf2d3cc3414d3fe611175fcda66">Vector_Traj_Interface</a>.</p>
 
@@ -329,6 +339,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Acceleration at time secs </p>
 
 <p>Implements <a class="el" href="classVector__Traj__Interface.html#a89ae6a3540c00ec39e9e48374258349f">Vector_Traj_Interface</a>.</p>
 
@@ -356,6 +367,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the final time instant It is the max final time </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#a7366070da9421b46a73c49b4bc389d54">Traj_Generator_Interface</a>.</p>
 
@@ -383,6 +395,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the initial time instant It is the min initial time </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#ad3ab30f64cb94ca3957420a6afdd1a28">Traj_Generator_Interface</a>.</p>
 
@@ -411,6 +424,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Position at time secs </p>
 
 <p>Implements <a class="el" href="classVector__Traj__Interface.html#aa0a03cb1a273899011692faa1a228a01">Vector_Traj_Interface</a>.</p>
 
@@ -439,6 +453,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classVector__Traj__Interface.html#a121e84dd602f447102cbe6b6d7d692ef">Vector_Traj_Interface</a>.</p>
 
@@ -467,6 +482,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return true if all the trajectories are compleate at time secs </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#a39b42f9452454d4103c5c16839331477">Traj_Generator_Interface</a>.</p>
 
@@ -495,6 +511,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return true if the at least one trajectory is started at time secs </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#ad81c4ff084b8d43489d35370330fc9d9">Traj_Generator_Interface</a>.</p>
 
@@ -522,6 +539,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Remove last traj of the vector </p>
 
 <p>Definition at line <a class="el" href="Vector__Independent__Traj_8cpp_source.html#l00093">93</a> of file <a class="el" href="Vector__Independent__Traj_8cpp_source.html">Vector_Independent_Traj.cpp</a>.</p>
 
@@ -548,6 +566,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Push back a trajectory in the vector </p>
 
 <p>Definition at line <a class="el" href="Vector__Independent__Traj_8cpp_source.html#l00086">86</a> of file <a class="el" href="Vector__Independent__Traj_8cpp_source.html">Vector_Independent_Traj.cpp</a>.</p>
 
@@ -573,6 +592,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>get size of the vector </p>
 
 <p>Definition at line <a class="el" href="Vector__Independent__Traj_8cpp_source.html#l00104">104</a> of file <a class="el" href="Vector__Independent__Traj_8cpp_source.html">Vector_Independent_Traj.cpp</a>.</p>
 
@@ -596,8 +616,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>std::vector containing the trajectories </p>
 
-<p>Definition at line <a class="el" href="Vector__Independent__Traj_8h_source.html#l00044">44</a> of file <a class="el" href="Vector__Independent__Traj_8h_source.html">Vector_Independent_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Vector__Independent__Traj_8h_source.html#l00045">45</a> of file <a class="el" href="Vector__Independent__Traj_8h_source.html">Vector_Independent_Traj.h</a>.</p>
 
 </div>
 </div>

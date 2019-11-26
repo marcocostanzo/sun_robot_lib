@@ -1,4 +1,4 @@
 <map id="Line_Segment_Traj" name="Line_Segment_Traj">
-<area shape="rect" id="node2" href="$classPosition__Traj__Interface.html" title="Position_Traj_Interface" alt="" coords="11,80,167,107"/>
-<area shape="rect" id="node3" href="$classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="$classPosition__Traj__Interface.html" title="Abstract class representing a Position traj (3D) " alt="" coords="11,80,167,107"/>
+<area shape="rect" id="node3" href="$classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>

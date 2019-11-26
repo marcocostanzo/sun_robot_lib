@@ -94,14 +94,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Abstract Class for a <a class="el" href="classRobotLink.html" title="Abstract Class for a RobotLink. ">RobotLink</a>.  
+ <a href="classRobotLink.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RobotLink:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRobotLink__inherit__graph.png" border="0" usemap="#RobotLink_inherit__map" alt="Inheritance graph"/></div>
 <map name="RobotLink_inherit__map" id="RobotLink_inherit__map">
-<area shape="rect" id="node2" href="classRobotLinkPrismatic.html" title="RobotLinkPrismatic" alt="" coords="5,80,141,107"/>
-<area shape="rect" id="node3" href="classRobotLinkRevolute.html" title="RobotLinkRevolute" alt="" coords="165,80,299,107"/>
+<area shape="rect" id="node2" href="classRobotLinkPrismatic.html" title="Prismatic Link. " alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="classRobotLinkRevolute.html" title="Revolute Link. " alt="" coords="165,80,299,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -183,6 +186,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac3f231212c4337a2d4ae1fa46a557d3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobotLink.html#ac3f231212c4337a2d4ae1fa46a557d3d">RobotLink</a> (double a, double alpha, double d, double theta, double robot2dh_offset, bool robot2dh_flip, double Joint_Hard_limit_lower, double Joint_Hard_limit_higher, double Joint_Soft_limit_lower, double Joint_Soft_limit_higher, double hard_velocity_limit, double soft_velocity_limit, std::string name=&quot;joint_no_name&quot;)</td></tr>
+<tr class="memdesc:ac3f231212c4337a2d4ae1fa46a557d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full Constructor.  <a href="#ac3f231212c4337a2d4ae1fa46a557d3d">More...</a><br /></td></tr>
 <tr class="separator:ac3f231212c4337a2d4ae1fa46a557d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbedd896ea5f09416d77fb68cca33d3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobotLink.html#adbedd896ea5f09416d77fb68cca33d3e">RobotLink</a> (double a, double alpha, double d, double theta, double robot2dh_offset=0.0, bool robot2dh_flip=false, double Joint_Hard_limit_lower=-INFINITY, double Joint_Hard_limit_higher=INFINITY, double hard_velocity_limit=INFINITY, std::string name=&quot;joint_no_name&quot;)</td></tr>
 <tr class="separator:adbedd896ea5f09416d77fb68cca33d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,8 +228,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a2251de7d01d08937500a3da84e6a29ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00034">34</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<div class="textblock"><p>Abstract Class for a <a class="el" href="classRobotLink.html" title="Abstract Class for a RobotLink. ">RobotLink</a>. </p>
+
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00035">35</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac3f231212c4337a2d4ae1fa46a557d3d"></a>
 <div class="memitem">
@@ -324,6 +329,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Full Constructor. </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00033">33</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -433,6 +440,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Compute the link transform matrix input q_DH in DH convention </p>
 
 <p>Implemented in <a class="el" href="classRobotLinkPrismatic.html#a1d467c3e51d027ee9b2e2a1d34756f1f">RobotLinkPrismatic</a>, and <a class="el" href="classRobotLinkRevolute.html#ac88bcb08ffc4062132d8d159baab55df">RobotLinkRevolute</a>.</p>
 
@@ -530,6 +538,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object </p>
 
 <p>Implemented in <a class="el" href="classRobotLinkPrismatic.html#a7878eb61d11b1f6b92e03544704c016b">RobotLinkPrismatic</a>, and <a class="el" href="classRobotLinkRevolute.html#a33d57ed35baec139a7a43c7d875e81c5">RobotLinkRevolute</a>.</p>
 
@@ -555,6 +564,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Reimplemented in <a class="el" href="classRobotLinkPrismatic.html#aca7cf0b86052a1ab58fe9d821befd986">RobotLinkPrismatic</a>, and <a class="el" href="classRobotLinkRevolute.html#a29888dededcd5e3347406c5fe6f291ee">RobotLinkRevolute</a>.</p>
 
@@ -583,6 +593,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return True if the input q_R (in <a class="el" href="classRobot.html" title="The Robot Class. ">Robot</a> convention) exceeds the HardLimits </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00338">338</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -609,6 +620,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return True if the input q_vel exceeds the velocity hard limit </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00352">352</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -635,6 +647,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return True if the input q_R (in <a class="el" href="classRobot.html" title="The Robot Class. ">Robot</a> convention) exceeds the softLimits </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00331">331</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -661,6 +674,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return True if the input q_vel exceeds the velocity soft limit </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00345">345</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -686,6 +700,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return the link length </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00107">107</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -711,6 +726,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return the link twist </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00114">114</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -736,6 +752,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return the link offset Note:</p><ul>
+<li>For prismatic link this is the joint variable, in that case this function returns NaN </li>
+</ul>
 
 <p>Reimplemented in <a class="el" href="classRobotLinkPrismatic.html#a94a510a490b75b0fe16a9293b5d3bb9b">RobotLinkPrismatic</a>.</p>
 
@@ -763,6 +782,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>return the link angle Note:</p><ul>
+<li>For revolute link this is the joint variable, in that case this function returns NaN </li>
+</ul>
 
 <p>Reimplemented in <a class="el" href="classRobotLinkRevolute.html#a7fca0de43f7705babce4a375637ca478">RobotLinkRevolute</a>.</p>
 
@@ -790,6 +812,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00162">162</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -815,6 +838,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00176">176</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -840,6 +864,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Return the Joint Name </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00183">183</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -865,6 +890,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Return the sign between robot and DH conventions </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00148">148</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -890,6 +916,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Return the offset between the robot and DH convention </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00141">141</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -915,6 +942,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00155">155</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -940,6 +968,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00169">169</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -966,6 +995,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00369">369</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -992,6 +1022,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00359">359</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1018,6 +1049,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00389">389</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1044,6 +1076,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00379">379</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1070,6 +1103,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00194">194</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1096,6 +1130,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00201">201</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1122,6 +1157,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO ERROR IF LINK IS PRISMATIC </p>
 
 <p>Reimplemented in <a class="el" href="classRobotLinkPrismatic.html#acb00294f3c2e5e5e370dd4035d21b83d">RobotLinkPrismatic</a>.</p>
 
@@ -1150,6 +1186,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO ERROR IF LINK IS REVOLUTE </p>
 
 <p>Reimplemented in <a class="el" href="classRobotLinkRevolute.html#abe7a9b924a2b34f974aeb57621a7f185">RobotLinkRevolute</a>.</p>
 
@@ -1188,6 +1225,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00254">254</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1214,6 +1252,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00263">263</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1240,6 +1279,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00270">270</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1266,6 +1306,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00292">292</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1292,6 +1333,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00231">231</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1318,6 +1360,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00224">224</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1354,6 +1397,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00238">238</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1380,6 +1424,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00247">247</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1406,6 +1451,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>TODO </p>
 
 <p>Definition at line <a class="el" href="RobotLink_8cpp_source.html#l00281">281</a> of file <a class="el" href="RobotLink_8cpp_source.html">RobotLink.cpp</a>.</p>
 
@@ -1431,6 +1477,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Retrun the joint type 'p' = prismatic 'r' = revolute </p>
 
 <p>Implemented in <a class="el" href="classRobotLinkPrismatic.html#ad981d7864346ec742938654b8c5f4b54">RobotLinkPrismatic</a>, and <a class="el" href="classRobotLinkRevolute.html#a8114aa5be1b6155dc5949b8115d5cd7b">RobotLinkRevolute</a>.</p>
 
@@ -1455,7 +1502,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00043">43</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00044">44</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1477,7 +1524,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00044">44</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00045">45</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1499,7 +1546,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00045">45</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00046">46</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1521,7 +1568,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00058">58</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00059">59</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1543,7 +1590,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00057">57</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00058">58</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1565,7 +1612,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00057">57</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00058">58</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1587,7 +1634,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00056">56</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00057">57</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1609,7 +1656,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00056">56</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00057">57</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1631,7 +1678,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00062">62</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00063">63</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1653,7 +1700,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00052">52</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00053">53</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1675,7 +1722,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00051">51</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00052">52</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1697,7 +1744,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00059">59</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00060">60</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>
@@ -1719,7 +1766,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00046">46</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
+<p>Definition at line <a class="el" href="RobotLink_8h_source.html#l00047">47</a> of file <a class="el" href="RobotLink_8h_source.html">RobotLink.h</a>.</p>
 
 </div>
 </div>

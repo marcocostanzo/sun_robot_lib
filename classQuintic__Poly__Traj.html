@@ -92,14 +92,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Scalar trajectory implemented as a Quintic Poly.  
+ <a href="classQuintic__Poly__Traj.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Quintic_Poly_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classQuintic__Poly__Traj__inherit__graph.png" border="0" usemap="#Quintic__Poly__Traj_inherit__map" alt="Inheritance graph"/></div>
 <map name="Quintic__Poly__Traj_inherit__map" id="Quintic__Poly__Traj_inherit__map">
-<area shape="rect" id="node2" href="classScalar__Traj__Interface.html" title="Scalar_Traj_Interface" alt="" coords="15,80,162,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classScalar__Traj__Interface.html" title="Abstract class representing a Scalar traj. " alt="" coords="15,80,162,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,8 +110,8 @@ Collaboration diagram for Quintic_Poly_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classQuintic__Poly__Traj__coll__graph.png" border="0" usemap="#Quintic__Poly__Traj_coll__map" alt="Collaboration graph"/></div>
 <map name="Quintic__Poly__Traj_coll__map" id="Quintic__Poly__Traj_coll__map">
-<area shape="rect" id="node2" href="classScalar__Traj__Interface.html" title="Scalar_Traj_Interface" alt="" coords="15,80,162,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="classScalar__Traj__Interface.html" title="Abstract class representing a Scalar traj. " alt="" coords="15,80,162,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -200,8 +203,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00033">33</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<div class="textblock"><p>Scalar trajectory implemented as a Quintic Poly. </p>
+
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00034">34</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0c7493bbdff29e74b2cc11f786e9cf35"></a>
 <div class="memitem">
@@ -262,6 +266,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor </p>
 
 <p>Definition at line <a class="el" href="Quintic__Poly__Traj_8cpp_source.html#l00036">36</a> of file <a class="el" href="Quintic__Poly__Traj_8cpp_source.html">Quintic_Poly_Traj.cpp</a>.</p>
 
@@ -288,6 +293,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Copy Constructor </p>
 
 </div>
 </div>
@@ -313,6 +319,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the initial time instant (translate the trajectory in the time) </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#af184539b8285ed9c136e760a25d4c7da">Traj_Generator_Interface</a>.</p>
 
@@ -340,6 +347,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classScalar__Traj__Interface.html#a3f73a1c87b303e592809c6118ae8ad25">Scalar_Traj_Interface</a>.</p>
 
@@ -368,6 +376,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Acceleration at time secs </p>
 
 <p>Implements <a class="el" href="classScalar__Traj__Interface.html#aea1f2f02bb4c5d86f53c7621bd9d02ce">Scalar_Traj_Interface</a>.</p>
 
@@ -546,6 +555,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Position at time secs </p>
 
 <p>Implements <a class="el" href="classScalar__Traj__Interface.html#a9f9ba69508c3cbfd3313b284d0c1d48a">Scalar_Traj_Interface</a>.</p>
 
@@ -574,6 +584,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classScalar__Traj__Interface.html#a03fc8d84c7d7d6d4aa49e2e1726d3053">Scalar_Traj_Interface</a>.</p>
 
@@ -757,6 +768,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Update poly coefficients </p>
 
 <p>Definition at line <a class="el" href="Quintic__Poly__Traj_8cpp_source.html#l00179">179</a> of file <a class="el" href="Quintic__Poly__Traj_8cpp_source.html">Quintic_Poly_Traj.cpp</a>.</p>
 
@@ -780,8 +792,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Poly coeff of ddp(t) </p>
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00057">57</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00058">58</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -803,7 +816,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00064">64</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00065">65</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -825,7 +838,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00064">64</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00065">65</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -847,7 +860,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00064">64</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00065">65</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -869,7 +882,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00064">64</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00065">65</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -890,8 +903,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Poly coeff of p(t) </p>
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00047">47</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00048">48</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -912,8 +926,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Poly coeff of dp(t) </p>
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00052">52</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00053">53</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -935,7 +950,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00064">64</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00065">65</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -957,7 +972,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00064">64</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quintic__Poly__Traj_8h_source.html#l00065">65</a> of file <a class="el" href="Quintic__Poly__Traj_8h_source.html">Quintic_Poly_Traj.h</a>.</p>
 
 </div>
 </div>

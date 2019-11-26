@@ -1,7 +1,7 @@
 <map id="Scalar_Traj_Interface" name="Scalar_Traj_Interface">
-<area shape="rect" id="node3" href="$classQuintic__Poly__Traj.html" title="Quintic_Poly_Traj" alt="" coords="5,155,131,181"/>
-<area shape="rect" id="node4" href="$classSine__Traj.html" title="Sine_Traj" alt="" coords="155,155,232,181"/>
-<area shape="rect" id="node5" href="$classTrapez__Traj.html" title="Trapez_Traj" alt="" coords="256,155,347,181"/>
-<area shape="rect" id="node6" href="$classTrapez__Vel__Traj.html" title="Trapez_Vel_Traj" alt="" coords="371,155,488,181"/>
-<area shape="rect" id="node2" href="$classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="163,5,330,32"/>
+<area shape="rect" id="node3" href="$classQuintic__Poly__Traj.html" title="Scalar trajectory implemented as a Quintic Poly. " alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node4" href="$classSine__Traj.html" title="Scalar Sinusoidal trajectory. " alt="" coords="155,155,232,181"/>
+<area shape="rect" id="node5" href="$classTrapez__Traj.html" title="ScalarTrajectory Traj Trapezoidal Velocity. " alt="" coords="256,155,347,181"/>
+<area shape="rect" id="node6" href="$classTrapez__Vel__Traj.html" title="ScalarTrajectory Traj Trapezoidal Velocity. " alt="" coords="371,155,488,181"/>
+<area shape="rect" id="node2" href="$classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="163,5,330,32"/>
 </map>

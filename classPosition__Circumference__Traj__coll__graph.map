@@ -1,4 +1,4 @@
 <map id="Position_Circumference_Traj" name="Position_Circumference_Traj">
-<area shape="rect" id="node2" href="$classPosition__Traj__Interface.html" title="Position_Traj_Interface" alt="" coords="23,80,179,107"/>
-<area shape="rect" id="node3" href="$classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="17,5,184,32"/>
+<area shape="rect" id="node2" href="$classPosition__Traj__Interface.html" title="Abstract class representing a Position traj (3D) " alt="" coords="23,80,179,107"/>
+<area shape="rect" id="node3" href="$classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="17,5,184,32"/>
 </map>

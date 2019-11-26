@@ -1,4 +1,4 @@
 <map id="COR_Traj" name="COR_Traj">
-<area shape="rect" id="node2" href="$classCartesian__Traj__Interface.html" title="Cartesian_Traj_Interface" alt="" coords="6,80,171,107"/>
-<area shape="rect" id="node3" href="$classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="$classCartesian__Traj__Interface.html" title="Abstract clas representing a Cartesian traj (Position + UnitQuaternion) " alt="" coords="6,80,171,107"/>
+<area shape="rect" id="node3" href="$classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="5,5,172,32"/>
 </map>

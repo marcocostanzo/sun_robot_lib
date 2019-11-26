@@ -93,14 +93,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Position traj representing a Circumference.  
+ <a href="classPosition__Circumference__Traj.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Position_Circumference_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPosition__Circumference__Traj__inherit__graph.png" border="0" usemap="#Position__Circumference__Traj_inherit__map" alt="Inheritance graph"/></div>
 <map name="Position__Circumference__Traj_inherit__map" id="Position__Circumference__Traj_inherit__map">
-<area shape="rect" id="node2" href="classPosition__Traj__Interface.html" title="Position_Traj_Interface" alt="" coords="23,80,179,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="17,5,184,32"/>
+<area shape="rect" id="node2" href="classPosition__Traj__Interface.html" title="Abstract class representing a Position traj (3D) " alt="" coords="23,80,179,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="17,5,184,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -108,8 +111,8 @@ Collaboration diagram for Position_Circumference_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPosition__Circumference__Traj__coll__graph.png" border="0" usemap="#Position__Circumference__Traj_coll__map" alt="Collaboration graph"/></div>
 <map name="Position__Circumference__Traj_coll__map" id="Position__Circumference__Traj_coll__map">
-<area shape="rect" id="node2" href="classPosition__Traj__Interface.html" title="Position_Traj_Interface" alt="" coords="23,80,179,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="17,5,184,32"/>
+<area shape="rect" id="node2" href="classPosition__Traj__Interface.html" title="Abstract class representing a Position traj (3D) " alt="" coords="23,80,179,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="17,5,184,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -197,8 +200,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00031">31</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
+<div class="textblock"><p>Position traj representing a Circumference. </p>
+
+<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00032">32</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a923ced715c3a9e87aca0972912eac8d7"></a>
 <div class="memitem">
@@ -235,6 +239,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Full Constructor </p>
 
 </div>
 </div>
@@ -251,6 +256,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Copy Constructor </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00103">103</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -278,6 +284,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the reference frame of the trajectory Apply an homogeneous transfrmation matrix to the trajectory new_T_curr is the homog transf matrix of the current frame w.r.t. the new frame </p>
 
 <p>Reimplemented from <a class="el" href="classPosition__Traj__Interface.html#a97702213c4504236ce7931a33132d3cb">Position_Traj_Interface</a>.</p>
 
@@ -306,6 +313,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the initial time instant (translate the trajectory in the time) </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#af184539b8285ed9c136e760a25d4c7da">Traj_Generator_Interface</a>.</p>
 
@@ -333,6 +341,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classPosition__Traj__Interface.html#af16ef2fd89ff580de0cf772ce111a1a9">Position_Traj_Interface</a>.</p>
 
@@ -361,6 +370,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Acceleration at time secs </p>
 
 <p>Implements <a class="el" href="classPosition__Traj__Interface.html#a7a72946db200cba2ae75877a447bcd18">Position_Traj_Interface</a>.</p>
 
@@ -389,6 +399,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the angular velocity </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00286">286</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -415,6 +426,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the angular position (position) </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00272">272</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -441,6 +453,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the angular velocity </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00279">279</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -466,6 +479,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get center of the Circumference if the circumferece is a point return The point </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00126">126</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -491,6 +505,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the final time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#a7366070da9421b46a73c49b4bc389d54">Traj_Generator_Interface</a>.</p>
 
@@ -518,6 +533,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the initial time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#ad3ab30f64cb94ca3957420a6afdd1a28">Traj_Generator_Interface</a>.</p>
 
@@ -545,6 +561,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get orientation of the Circumference as Rotation Matrix if the circumferece is a point return Identity </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00134">134</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -571,6 +588,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Position at time secs </p>
 
 <p>Implements <a class="el" href="classPosition__Traj__Interface.html#a9951c9ce80c6fe1472c7db82e5a205e0">Position_Traj_Interface</a>.</p>
 
@@ -598,6 +616,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get radius of the Circumference if the circumferece is a point return 0 </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00142">142</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -624,6 +643,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classPosition__Traj__Interface.html#a59080e55d9f48526b0b15f8d83ee59b6">Position_Traj_Interface</a>.</p>
 
@@ -651,6 +671,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>check if the circumference is a point </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00149">149</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -677,6 +698,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set the scalar trajectory Trajectory for the scalar s variable should be a traj from 0 to final_angle s = 0 -&gt; _pi &amp; s = 1 -&gt; _pf Note: Velocities and accelerations TODO! </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00179">179</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -743,6 +765,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Compute the params of the circumference given the start point, the final point and radius r_hat = normal to the circumference plane pi = initial point pf = final point rho = radius c (return param) = center angle (return param) = angle to use to generate the scalar trajectory sign_plut (optional input) = there are 2 solutions... this bool select the solution </p>
 
 <p>Definition at line <a class="el" href="Position__Circumference__Traj_8cpp_source.html#l00077">77</a> of file <a class="el" href="Position__Circumference__Traj_8cpp_source.html">Position_Circumference_Traj.cpp</a>.</p>
 
@@ -766,8 +789,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Center of the circumference </p>
 
-<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00049">49</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00050">50</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -788,8 +812,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Rotation Matrix of the circumference </p>
 
-<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00059">59</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00060">60</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -810,8 +835,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Radius of the circumference </p>
 
-<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00054">54</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00055">55</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -832,8 +858,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Trajectory for the scalar s variable should be a traj from 0 to final_angle s = 0 -&gt; _pi &amp; s = 1 -&gt; _pf </p>
 
-<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00065">65</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Position__Circumference__Traj_8h_source.html#l00066">66</a> of file <a class="el" href="Position__Circumference__Traj_8h_source.html">Position_Circumference_Traj.h</a>.</p>
 
 </div>
 </div>

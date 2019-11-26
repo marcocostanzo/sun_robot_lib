@@ -92,14 +92,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Quaternion traj representing a rotation about a constant axis.  
+ <a href="classRotation__Const__Axis__Traj.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Rotation_Const_Axis_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRotation__Const__Axis__Traj__inherit__graph.png" border="0" usemap="#Rotation__Const__Axis__Traj_inherit__map" alt="Inheritance graph"/></div>
 <map name="Rotation__Const__Axis__Traj_inherit__map" id="Rotation__Const__Axis__Traj_inherit__map">
-<area shape="rect" id="node2" href="classQuaternion__Traj__Interface.html" title="Quaternion_Traj_Interface" alt="" coords="7,80,179,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="9,5,176,32"/>
+<area shape="rect" id="node2" href="classQuaternion__Traj__Interface.html" title="Abstract class representing a rotatin traj (UnitQuaternion) " alt="" coords="7,80,179,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="9,5,176,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,8 +110,8 @@ Collaboration diagram for Rotation_Const_Axis_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRotation__Const__Axis__Traj__coll__graph.png" border="0" usemap="#Rotation__Const__Axis__Traj_coll__map" alt="Collaboration graph"/></div>
 <map name="Rotation__Const__Axis__Traj_coll__map" id="Rotation__Const__Axis__Traj_coll__map">
-<area shape="rect" id="node2" href="classQuaternion__Traj__Interface.html" title="Quaternion_Traj_Interface" alt="" coords="7,80,179,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="9,5,176,32"/>
+<area shape="rect" id="node2" href="classQuaternion__Traj__Interface.html" title="Abstract class representing a rotatin traj (UnitQuaternion) " alt="" coords="7,80,179,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="9,5,176,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -187,8 +190,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html#l00031">31</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>.</p>
+<div class="textblock"><p>Quaternion traj representing a rotation about a constant axis. </p>
+
+<p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html#l00032">32</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aebc1da0ddd7c156dafa92477ee9c7a77"></a>
 <div class="memitem">
@@ -219,6 +223,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>FULL Constructor </p>
 
 </div>
 </div>
@@ -262,6 +267,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the reference frame of the trajectory Apply a rotation matrix to the trajectory new_R_curr is the rotation matrix of the current frame w.r.t. the new frame </p>
 
 <p>Reimplemented from <a class="el" href="classQuaternion__Traj__Interface.html#a90effb741c0ea0b9769645ca291f925c">Quaternion_Traj_Interface</a>.</p>
 
@@ -288,6 +294,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the reference frame of the trajectory Apply a rotation matrix to the trajectory new_Q_curr is the Quaterion representing the rotation matrix of the current frame w.r.t. the new frame </p>
 
 <p>Reimplemented from <a class="el" href="classQuaternion__Traj__Interface.html#a63ecac472132b3456e857d1c675ae1a0">Quaternion_Traj_Interface</a>.</p>
 
@@ -316,6 +323,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the initial time instant (translate the trajectory in the time) </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#af184539b8285ed9c136e760a25d4c7da">Traj_Generator_Interface</a>.</p>
 
@@ -343,6 +351,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classQuaternion__Traj__Interface.html#a1bbba082abf046d2bd107de8d902295d">Quaternion_Traj_Interface</a>.</p>
 
@@ -371,6 +380,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Angular Acceleration at time secs </p>
 
 <p>Implements <a class="el" href="classQuaternion__Traj__Interface.html#a8c795688ce36bd3063909c11a66b7f3e">Quaternion_Traj_Interface</a>.</p>
 
@@ -398,6 +408,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get rotation axis </p>
 
 <p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html#l00067">67</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html">Rotation_Const_Axis_Traj.cpp</a>.</p>
 
@@ -424,6 +435,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Delta quaterinion, i.e. initial_Q_now </p>
 
 <p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html#l00159">159</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html">Rotation_Const_Axis_Traj.cpp</a>.</p>
 
@@ -449,6 +461,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the final time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#a7366070da9421b46a73c49b4bc389d54">Traj_Generator_Interface</a>.</p>
 
@@ -476,6 +489,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get initial quaternion </p>
 
 <p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html#l00074">74</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html">Rotation_Const_Axis_Traj.cpp</a>.</p>
 
@@ -501,6 +515,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the initial time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#ad3ab30f64cb94ca3957420a6afdd1a28">Traj_Generator_Interface</a>.</p>
 
@@ -529,6 +544,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Quaternion at time secs </p>
 
 <p>Implements <a class="el" href="classQuaternion__Traj__Interface.html#aeb2c83d338c4a1f2631b00cfed565731">Quaternion_Traj_Interface</a>.</p>
 
@@ -557,6 +573,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Angular Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classQuaternion__Traj__Interface.html#aff955c4dbd62e13e8f730ec0f82f100c">Quaternion_Traj_Interface</a>.</p>
 
@@ -585,6 +602,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set rotation axis </p>
 
 <p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html#l00099">99</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html">Rotation_Const_Axis_Traj.cpp</a>.</p>
 
@@ -611,6 +629,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set initial quaternion </p>
 
 <p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html#l00110">110</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html">Rotation_Const_Axis_Traj.cpp</a>.</p>
 
@@ -637,6 +656,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Trajectory for the angle variable should be a traj from theta_i to theta_f i.e. from the initial angle to the final angle </p>
 
 <p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html#l00126">126</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8cpp_source.html">Rotation_Const_Axis_Traj.cpp</a>.</p>
 
@@ -660,8 +680,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Rotation axis </p>
 
-<p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html#l00048">48</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html#l00049">49</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -682,8 +703,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Initial orientation in quaternion representation </p>
 
-<p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html#l00053">53</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html#l00054">54</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -704,8 +726,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Trajectory for the angle variable should be a traj from theta_i to theta_f i.e. from the initial angle to the final angle </p>
 
-<p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html#l00059">59</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html#l00060">60</a> of file <a class="el" href="Rotation__Const__Axis__Traj_8h_source.html">Rotation_Const_Axis_Traj.h</a>.</p>
 
 </div>
 </div>

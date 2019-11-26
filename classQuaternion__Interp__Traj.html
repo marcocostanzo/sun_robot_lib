@@ -92,14 +92,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>WARNING THIS CLASS IS NOT READY USE <a class="el" href="classRotation__Const__Axis__Traj.html" title="Quaternion traj representing a rotation about a constant axis. ">Rotation_Const_Axis_Traj</a>.  
+ <a href="classQuaternion__Interp__Traj.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Quaternion_Interp_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classQuaternion__Interp__Traj__inherit__graph.png" border="0" usemap="#Quaternion__Interp__Traj_inherit__map" alt="Inheritance graph"/></div>
 <map name="Quaternion__Interp__Traj_inherit__map" id="Quaternion__Interp__Traj_inherit__map">
-<area shape="rect" id="node2" href="classQuaternion__Traj__Interface.html" title="Quaternion_Traj_Interface" alt="" coords="5,80,177,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="8,5,175,32"/>
+<area shape="rect" id="node2" href="classQuaternion__Traj__Interface.html" title="Abstract class representing a rotatin traj (UnitQuaternion) " alt="" coords="5,80,177,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="8,5,175,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,8 +110,8 @@ Collaboration diagram for Quaternion_Interp_Traj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classQuaternion__Interp__Traj__coll__graph.png" border="0" usemap="#Quaternion__Interp__Traj_coll__map" alt="Collaboration graph"/></div>
 <map name="Quaternion__Interp__Traj_coll__map" id="Quaternion__Interp__Traj_coll__map">
-<area shape="rect" id="node2" href="classQuaternion__Traj__Interface.html" title="Quaternion_Traj_Interface" alt="" coords="5,80,177,107"/>
-<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="Traj_Generator_Interface" alt="" coords="8,5,175,32"/>
+<area shape="rect" id="node2" href="classQuaternion__Traj__Interface.html" title="Abstract class representing a rotatin traj (UnitQuaternion) " alt="" coords="5,80,177,107"/>
+<area shape="rect" id="node3" href="classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="8,5,175,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -185,8 +188,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a88fac3e86a02d57d8633397c6f521488 inherit pro_attribs_classTraj__Generator__Interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Quaternion__Interp__Traj_8h_source.html#l00036">36</a> of file <a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>.</p>
+<div class="textblock"><p>WARNING THIS CLASS IS NOT READY USE <a class="el" href="classRotation__Const__Axis__Traj.html" title="Quaternion traj representing a rotation about a constant axis. ">Rotation_Const_Axis_Traj</a>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classRotation__Const__Axis__Traj.html" title="Quaternion traj representing a rotation about a constant axis. ">Rotation_Const_Axis_Traj</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="Quaternion__Interp__Traj_8h_source.html#l00040">40</a> of file <a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a25520f9a68bfb9670203395320b8bff1"></a>
 <div class="memitem">
@@ -260,6 +265,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Change the initial time instant (translate the trajectory in the time) </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#af184539b8285ed9c136e760a25d4c7da">Traj_Generator_Interface</a>.</p>
 
@@ -285,6 +291,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Clone the object in the heap </p>
 
 <p>Implements <a class="el" href="classQuaternion__Traj__Interface.html#a1bbba082abf046d2bd107de8d902295d">Quaternion_Traj_Interface</a>.</p>
 
@@ -311,6 +318,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Angular Acceleration at time secs </p>
 
 <p>Implements <a class="el" href="classQuaternion__Traj__Interface.html#a8c795688ce36bd3063909c11a66b7f3e">Quaternion_Traj_Interface</a>.</p>
 
@@ -406,6 +414,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the final time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#a7366070da9421b46a73c49b4bc389d54">Traj_Generator_Interface</a>.</p>
 
@@ -477,6 +486,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the initial time instant </p>
 
 <p>Reimplemented from <a class="el" href="classTraj__Generator__Interface.html#ad3ab30f64cb94ca3957420a6afdd1a28">Traj_Generator_Interface</a>.</p>
 
@@ -503,6 +513,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Quaternion at time secs </p>
 
 <p>Implements <a class="el" href="classQuaternion__Traj__Interface.html#aeb2c83d338c4a1f2631b00cfed565731">Quaternion_Traj_Interface</a>.</p>
 
@@ -529,6 +540,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get Angular Velocity at time secs </p>
 
 <p>Implements <a class="el" href="classQuaternion__Traj__Interface.html#aff955c4dbd62e13e8f730ec0f82f100c">Quaternion_Traj_Interface</a>.</p>
 
@@ -553,7 +565,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quaternion__Interp__Traj_8h_source.html#l00058">58</a> of file <a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quaternion__Interp__Traj_8h_source.html#l00062">62</a> of file <a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -575,7 +587,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quaternion__Interp__Traj_8h_source.html#l00053">53</a> of file <a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quaternion__Interp__Traj_8h_source.html#l00057">57</a> of file <a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>.</p>
 
 </div>
 </div>
@@ -597,7 +609,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Quaternion__Interp__Traj_8h_source.html#l00064">64</a> of file <a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>.</p>
+<p>Definition at line <a class="el" href="Quaternion__Interp__Traj_8h_source.html#l00068">68</a> of file <a class="el" href="Quaternion__Interp__Traj_8h_source.html">Quaternion_Interp_Traj.h</a>.</p>
 
 </div>
 </div>
