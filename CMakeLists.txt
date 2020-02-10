@@ -132,26 +132,6 @@ include_directories(
    src/Robots/LBRiiwa7.cpp
    src/Robots/MotomanSIA5F.cpp
 
-   #Quintic scalar poly
-   src/Traj_Generators/Quintic_Poly_Traj.cpp
-   #Trapez Vel
-   src/Traj_Generators/Trapez_Traj.cpp
-   src/Traj_Generators/Trapez_Vel_Traj.cpp
-   #Quintic sine wave
-   src/Traj_Generators/Sine_Traj.cpp
-   #Generic multidim traj
-   src/Traj_Generators/Vector_Independent_Traj.cpp
-   #Line Segment traj
-   src/Traj_Generators/Line_Segment_Traj.cpp
-   #Circumference traj
-   src/Traj_Generators/Position_Circumference_Traj.cpp
-   #Quaternion Traj
-   #src/Traj_Generators/Quaternion_Interp_Traj.cpp #TODO
-   src/Traj_Generators/Rotation_Const_Axis_Traj.cpp
-   #Cartesian Traj
-   src/Traj_Generators/Cartesian_Independent_Traj.cpp
-   src/Traj_Generators/COR_Traj.cpp
-
  )
 
 ## Add cmake target dependencies of the library
