@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_2b',['operator+',['../classRobot.html#af0c11ca488bc6da64d3c12b7da93a6d9',1,'Robot::operator+()'],['../Robot_8h.html#a279f07b94979efc02cec1bc97dd25bc6',1,'operator+(const RobotLink &amp;link1, const RobotLink &amp;link2):&#160;Robot.cpp'],['../Robot_8cpp.html#a279f07b94979efc02cec1bc97dd25bc6',1,'operator+(const RobotLink &amp;link1, const RobotLink &amp;link2):&#160;Robot.cpp']]],
-  ['operator_2b_3d',['operator+=',['../classRobot.html#af9949eb5216b760cb2ffce61b91974e3',1,'Robot']]]
+  ['operator_2b',['operator+',['../classsun_1_1Robot.html#a6f5929acd2f1f6ec18b2143b922fd500',1,'sun::Robot::operator+()'],['../namespacesun.html#aad49c84b5e7d2f8b6ea8c6b0ced6ae98',1,'sun::operator+()']]],
+  ['operator_2b_3d',['operator+=',['../classsun_1_1Robot.html#add11dbb7aef3ce1e00124b6dd9a08495',1,'sun::Robot']]]
 ];

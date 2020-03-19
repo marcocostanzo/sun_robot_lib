@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fkine',['fkine',['../classRobot.html#a1355bb666ed28bcfb807f4be7df3063a',1,'Robot::fkine(const TooN::Vector&lt;&gt; &amp;q_DH, int n_joint, const TooN::Matrix&lt; 4, 4 &gt; &amp;j_T_f) const '],['../classRobot.html#ac5dc2e63eb62cc7abc04d12de3c245d0',1,'Robot::fkine(const TooN::Vector&lt;&gt; &amp;q_DH, int n_joint) const '],['../classRobot.html#a65bd232004a91be130a39c70aa732719',1,'Robot::fkine(const TooN::Vector&lt;&gt; &amp;q_DH) const '],['../classRobot.html#a71916f7212c079fee4d5827ed22b9ac7',1,'Robot::fkine(const TooN::Vector&lt;&gt; &amp;q_DH, const TooN::Matrix&lt; 4, 4 &gt; &amp;e_T_f) const ']]],
-  ['fkine_5fall',['fkine_all',['../classRobot.html#aa2f14e906c2f6412c222623d17aa25b9',1,'Robot']]],
-  ['fkine_5finternal',['fkine_internal',['../classRobot.html#a7bce5518464a31f771d95ea3652b76ea',1,'Robot']]]
+  ['fkine',['fkine',['../classsun_1_1Robot.html#a5922c90c3fd9111c2911753fb1d97629',1,'sun::Robot::fkine(const TooN::Vector&lt;&gt; &amp;q_DH, int n_joint, const TooN::Matrix&lt; 4, 4 &gt; &amp;j_T_f) const'],['../classsun_1_1Robot.html#aee59780cb9ba18d0007d4379a4a4d47e',1,'sun::Robot::fkine(const TooN::Vector&lt;&gt; &amp;q_DH, int n_joint) const'],['../classsun_1_1Robot.html#ab9cd1312a7007d9856fd1c8ecedfbd23',1,'sun::Robot::fkine(const TooN::Vector&lt;&gt; &amp;q_DH) const'],['../classsun_1_1Robot.html#a33b82fe730cdff53378f60896aa5b187',1,'sun::Robot::fkine(const TooN::Vector&lt;&gt; &amp;q_DH, const TooN::Matrix&lt; 4, 4 &gt; &amp;e_T_f) const']]],
+  ['fkine_5fall',['fkine_all',['../classsun_1_1Robot.html#a43e60627cdbcec6870454c6ef05b2cd9',1,'sun::Robot']]],
+  ['fkine_5finternal',['fkine_internal',['../classsun_1_1Robot.html#a90f1636eacdabe06d4f59dde4f8d29f4',1,'sun::Robot']]]
 ];

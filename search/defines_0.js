@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5fuse_5fmath_5fdefines',['_USE_MATH_DEFINES',['../Sine__Traj_8cpp.html#a525335710b53cb064ca56b936120431e',1,'Sine_Traj.cpp']]]
+  ['lbriiwa7_5fmodel_5fstr',['LBRIIWA7_MODEL_STR',['../LBRiiwa7_8h.html#a3a0e857877182cfdf64caa4ada79eb5f',1,'LBRiiwa7.h']]]
 ];

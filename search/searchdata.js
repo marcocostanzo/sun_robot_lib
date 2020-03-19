@@ -1,36 +1,39 @@
 var indexSectionsWithContent =
 {
-  0: "_acdefgijlmopqrstuv",
-  1: "clmpqrstv",
-  2: "clmpqrstv",
-  3: "acdefgijlmopqrstuv",
-  4: "_",
-  5: "clpqrstv",
-  6: "_clmqrt",
-  7: "ls"
+  0: "_acdefgijlmoprst",
+  1: "lmr",
+  2: "s",
+  3: "lmr",
+  4: "acdefgijlmoprst",
+  5: "_",
+  6: "r",
+  7: "lmr",
+  8: "ls"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "files",
-  3: "functions",
-  4: "variables",
-  5: "typedefs",
-  6: "defines",
-  7: "pages"
+  2: "namespaces",
+  3: "files",
+  4: "functions",
+  5: "variables",
+  6: "typedefs",
+  7: "defines",
+  8: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Files",
-  3: "Functions",
-  4: "Variables",
-  5: "Typedefs",
-  6: "Macros",
-  7: "Pages"
+  2: "Namespaces",
+  3: "Files",
+  4: "Functions",
+  5: "Variables",
+  6: "Typedefs",
+  7: "Macros",
+  8: "Pages"
 };
 

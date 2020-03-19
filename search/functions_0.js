@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['a',['A',['../classRobotLink.html#afbc090fdc1afa2e0dc5091d221817dca',1,'RobotLink::A()'],['../classRobotLinkPrismatic.html#a1d467c3e51d027ee9b2e2a1d34756f1f',1,'RobotLinkPrismatic::A()'],['../classRobotLinkRevolute.html#ac88bcb08ffc4062132d8d159baab55df',1,'RobotLinkRevolute::A()']]],
-  ['a_5finternal',['A_internal',['../classRobotLink.html#ae1dc7732c3775f5d470225d684edf2e2',1,'RobotLink']]]
+  ['a',['A',['../classsun_1_1RobotLink.html#a105adbad884287bdf0cd0be0eccb1ab5',1,'sun::RobotLink::A()'],['../classsun_1_1RobotLinkPrismatic.html#abd2212af42889ee0ef93335a72ba8354',1,'sun::RobotLinkPrismatic::A()'],['../classsun_1_1RobotLinkRevolute.html#a446090fdf1eb77dd74ffc1e2b7049189',1,'sun::RobotLinkRevolute::A()']]],
+  ['a_5finternal',['A_internal',['../classsun_1_1RobotLink.html#a93b6df1dd241b1b01ba0f2b110be0a33',1,'sun::RobotLink']]]
 ];

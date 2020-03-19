@@ -1,6 +1,6 @@
-<map id="sun_robot_lib/include/Robots/MotomanSIA5F.h" name="sun_robot_lib/include/Robots/MotomanSIA5F.h">
-<area shape="rect" id="node2" href="$Robot_8h.html" title="Robot.h" alt="" coords="369,95,437,121"/>
-<area shape="rect" id="node4" href="$RobotLinkPrismatic_8h.html" title="RobotLinkPrismatic.h" alt="" coords="160,169,307,196"/>
-<area shape="rect" id="node8" href="$RobotLinkRevolute_8h.html" title="RobotLinkRevolute.h" alt="" coords="331,169,475,196"/>
-<area shape="rect" id="node5" href="$RobotLink_8h.html" title="RobotLink.h" alt="" coords="271,244,363,271"/>
+<map id="sun_robot_lib/include/sun_robot_lib/Robots/MotomanSIA5F.h" name="sun_robot_lib/include/sun_robot_lib/Robots/MotomanSIA5F.h">
+<area shape="rect" id="node2" href="$Robot_8h.html" title="sun_robot_lib/Robot.h" alt="" coords="465,109,614,136"/>
+<area shape="rect" id="node3" href="$RobotLinkPrismatic_8h.html" title="sun_robot_lib/RobotLinkPrismatic.h" alt="" coords="5,191,233,218"/>
+<area shape="rect" id="node7" href="$RobotLinkRevolute_8h.html" title="sun_robot_lib/RobotLinkRevolute.h" alt="" coords="257,191,483,218"/>
+<area shape="rect" id="node4" href="$RobotLink_8h.html" title="sun_robot_lib/RobotLink.h" alt="" coords="158,273,331,300"/>
 </map>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['display',['display',['../classRobot.html#a079c44b63ede22b1b6be4297934886da',1,'Robot::display()'],['../classRobotLink.html#aad2167fdd163ea945274c50970d31b7e',1,'RobotLink::display()'],['../classRobotLinkPrismatic.html#aca7cf0b86052a1ab58fe9d821befd986',1,'RobotLinkPrismatic::display()'],['../classRobotLinkRevolute.html#a29888dededcd5e3347406c5fe6f291ee',1,'RobotLinkRevolute::display()']]],
-  ['dispposition',['dispPosition',['../classRobot.html#a5d2b694c65e408f5815890cc726e835e',1,'Robot']]]
+  ['display',['display',['../classsun_1_1Robot.html#a8525e7d24be0856cb51af269f3f9c478',1,'sun::Robot::display()'],['../classsun_1_1RobotLink.html#a2c0a704f966a5f7b654459b69cad1171',1,'sun::RobotLink::display()'],['../classsun_1_1RobotLinkPrismatic.html#a3d2c611024138d64f75faefe84492175',1,'sun::RobotLinkPrismatic::display()'],['../classsun_1_1RobotLinkRevolute.html#a111f15160e75ba5d65ffe60c3844f5c8',1,'sun::RobotLinkRevolute::display()']]],
+  ['dispposition',['dispPosition',['../classsun_1_1Robot.html#a20e068f439ae95a61d326c528f1f6330',1,'sun::Robot']]]
 ];

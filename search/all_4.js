@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['exceededhardjointlimits',['exceededHardJointLimits',['../classRobot.html#a3fd5e968c98e3a0b188b6b17f915a08f',1,'Robot::exceededHardJointLimits()'],['../classRobotLink.html#a7b308d88abb2be92f9c229b9075bbe72',1,'RobotLink::exceededHardJointLimits()']]],
-  ['exceededhardvelocitylimit',['exceededHardVelocityLimit',['../classRobotLink.html#acbeeb060c682c36a2b59319e4e7fd1be',1,'RobotLink']]],
-  ['exceededhardvelocitylimits',['exceededHardVelocityLimits',['../classRobot.html#a0f5176a6d6b8e15f8b809863ca199275',1,'Robot']]],
-  ['exceededsoftjointlimits',['exceededSoftJointLimits',['../classRobot.html#ac6d99dcbd9c40a4a0e35e97d9e4ef088',1,'Robot::exceededSoftJointLimits()'],['../classRobotLink.html#ab01bb9b0df2ae52a2eb954588c7734b0',1,'RobotLink::exceededSoftJointLimits()']]],
-  ['exceededsoftvelocitylimit',['exceededSoftVelocityLimit',['../classRobotLink.html#aec84199581176d4486853b15abe74f3e',1,'RobotLink']]],
-  ['exceededsoftvelocitylimits',['exceededSoftVelocityLimits',['../classRobot.html#aa1efe4cc0fc8d9cf7a66c10ac3a87645',1,'Robot']]]
+  ['exceededhardjointlimits',['exceededHardJointLimits',['../classsun_1_1Robot.html#a5bfd70e80828e320b4f33bd5e603a87b',1,'sun::Robot::exceededHardJointLimits()'],['../classsun_1_1RobotLink.html#a3979fc8580c3b16826d375d519bef6e2',1,'sun::RobotLink::exceededHardJointLimits()']]],
+  ['exceededhardvelocitylimit',['exceededHardVelocityLimit',['../classsun_1_1RobotLink.html#af0215bea1a0368a71bd579d74d62070a',1,'sun::RobotLink']]],
+  ['exceededhardvelocitylimits',['exceededHardVelocityLimits',['../classsun_1_1Robot.html#aa3b3d25762a2f5b007472752f833a19c',1,'sun::Robot']]],
+  ['exceededsoftjointlimits',['exceededSoftJointLimits',['../classsun_1_1Robot.html#aa0ab8358db7bf03d4f4801be4013b586',1,'sun::Robot::exceededSoftJointLimits()'],['../classsun_1_1RobotLink.html#a8e0e1fe3fd64f01e589df3c4d9165230',1,'sun::RobotLink::exceededSoftJointLimits()']]],
+  ['exceededsoftvelocitylimit',['exceededSoftVelocityLimit',['../classsun_1_1RobotLink.html#a3c1a8c21a4bc67a72e5055272ea95cb0',1,'sun::RobotLink']]],
+  ['exceededsoftvelocitylimits',['exceededSoftVelocityLimits',['../classsun_1_1Robot.html#a79f94238e31d3a1d4e036a525630f11b',1,'sun::Robot']]]
 ];
