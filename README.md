@@ -6,6 +6,6 @@ Documentation: https://marcocostanzo.github.io/sun_robot_lib
 You need these pkgs:
 
 ```
-https://github.com/marcocostanzo/robotics_toolbox_ros
+https://github.com/marcocostanzo/sun_math_toolbox
 https://github.com/marcocostanzo/ros_toon
 ```

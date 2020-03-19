@@ -1,8 +1,8 @@
 /*
 
-    Robot Class for the LBR iiwa 7 R800
+    Robot Class for the Motoman SIA5F
 
-    Copyright 2019 Università della Campania Luigi Vanvitelli
+    Copyright 2019-2020 Università della Campania Luigi Vanvitelli
 
     Author: Marco Costanzo <marco.costanzo@unicampania.it>
 
@@ -21,33 +21,34 @@
 
 */
 
-#ifndef ROBOTLBRIIWA7_H
-#define ROBOTLBRIIWA7_H
+#ifndef ROBOTMOTOMANSIA5F_H
+#define ROBOTMOTOMANSIA5F_H
 
-#include "Robot.h"
+#include "sun_robot_lib/Robot.h"
 
-#define LBRIIWA7_MODEL_STR "LBRiiwa7"
+#define MOTOMANSIA5F_MODEL_STR "MotomanSIA5F"
 
-class LBRiiwa7 : public Robot {
+namespace sun
+{
+class MotomanSIA5F : public Robot
+{
+public:
+  /*!
+      Full constructor
+  */
+  MotomanSIA5F(const TooN::Matrix<4, 4>& n_T_e, double dls_joint_speed_saturation, const std::string& name);
 
-    public:
-        /*!
-            Full constructor
-        */
-        LBRiiwa7(   const TooN::Matrix<4,4>& n_T_e, 
-                    double dls_joint_speed_saturation, 
-                    const std::string& name);
+  /*!
+      Constructor with name only
+  */
+  MotomanSIA5F(const std::string& name);
 
-        /*!
-            Constructor with name only
-        */
-        LBRiiwa7(const std::string& name);
-
-        /*!
-            Empty constructor
-        */
-        LBRiiwa7();
-
+  /*!
+      Empty constructor
+  */
+  MotomanSIA5F();
 };
+
+}  // namespace sun
 
 #endif

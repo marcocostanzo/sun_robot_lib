@@ -8,7 +8,7 @@ project(sun_robot_lib)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS 
-robotics_toolbox_ros
+sun_math_toolbox
 )
 
 ## System dependencies are found with CMake's conventions
@@ -103,7 +103,7 @@ robotics_toolbox_ros
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS robotics_toolbox_ros
+  CATKIN_DEPENDS sun_math_toolbox
 #  DEPENDS system_lib
 )
 
@@ -122,15 +122,15 @@ include_directories(
  add_library(${PROJECT_NAME}
 
    #Robot Links
-   src/RobotLink.cpp
-   src/RobotLinkRevolute.cpp
-   src/RobotLinkPrismatic.cpp
+   src/sun_robot_lib/RobotLink.cpp
+   src/sun_robot_lib/RobotLinkRevolute.cpp
+   src/sun_robot_lib/RobotLinkPrismatic.cpp
    #Robot
-   src/Robot.cpp
+   src/sun_robot_lib/Robot.cpp
 
    #Specific Robots
-   src/Robots/LBRiiwa7.cpp
-   src/Robots/MotomanSIA5F.cpp
+   src/sun_robot_lib/Robots/LBRiiwa7.cpp
+   src/sun_robot_lib/Robots/MotomanSIA5F.cpp
 
  )
 
