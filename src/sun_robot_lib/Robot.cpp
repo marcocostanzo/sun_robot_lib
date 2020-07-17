@@ -1178,6 +1178,7 @@ Vector<> Robot::grad_fcst_target_configuration(const Vector<>& q_DH, const Vecto
                                                const Vector<>& desired_configuration_joint_weights)
 {
   Vector<> d_W = Zeros(getNumJoints());
+  double sum_w = 0.0;
   for (int i = 0; i < getNumJoints(); i++)
   {
     Vector<2> limits = _links[i]->getSoftJointLimits();
@@ -1193,8 +1194,10 @@ Vector<> Robot::grad_fcst_target_configuration(const Vector<>& q_DH, const Vecto
     }
 
     d_W[i] = (q_DH[i] - desired_configuration[i]) / (limits[1] - limits[0]) * desired_configuration_joint_weights[i];
+  
+    sum_w += desired_configuration_joint_weights[i];
   }
-  d_W *= -1.0 / getNumJoints();
+  d_W *= -1.0 / sum_w;
   return d_W;
 }
 
