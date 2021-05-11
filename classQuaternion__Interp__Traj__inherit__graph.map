@@ -1,4 +1,0 @@
-<map id="Quaternion_Interp_Traj" name="Quaternion_Interp_Traj">
-<area shape="rect" id="node2" href="$classQuaternion__Traj__Interface.html" title="Abstract class representing a rotatin traj (UnitQuaternion) " alt="" coords="5,80,177,107"/>
-<area shape="rect" id="node3" href="$classTraj__Generator__Interface.html" title="General Interface for all traj generators. " alt="" coords="8,5,175,32"/>
-</map>

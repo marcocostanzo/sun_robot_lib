@@ -1,4 +1,5 @@
 <map id="sun::Robot" name="sun::Robot">
-<area shape="rect" id="node2" href="$classsun_1_1LBRiiwa7.html" title="sun::LBRiiwa7" alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node3" href="$classsun_1_1MotomanSIA5F.html" title="sun::MotomanSIA5F" alt="" coords="137,80,279,107"/>
+<area shape="rect" id="node1" title="The Robot Class." alt="" coords="95,5,186,32"/>
+<area shape="rect" id="node2" href="$classsun_1_1LBRiiwa7.html" title=" " alt="" coords="5,80,119,107"/>
+<area shape="rect" id="node3" href="$classsun_1_1MotomanSIA5F.html" title=" " alt="" coords="143,80,295,107"/>
 </map>

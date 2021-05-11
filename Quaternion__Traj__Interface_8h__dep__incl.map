@@ -1,7 +1,0 @@
-<map id="sun_robot_lib/include/Traj_Generators/Quaternion_Traj_Interface.h" name="sun_robot_lib/include/Traj_Generators/Quaternion_Traj_Interface.h">
-<area shape="rect" id="node2" href="$Cartesian__Independent__Traj_8h.html" title="sun_robot_lib/include\l/Traj_Generators/Cartesian\l_Independent_Traj.h" alt="" coords="5,109,184,165"/>
-<area shape="rect" id="node4" href="$Quaternion__Interp__Traj_8h.html" title="sun_robot_lib/include\l/Traj_Generators/Quaternion\l_Interp_Traj.h" alt="" coords="208,109,395,165"/>
-<area shape="rect" id="node5" href="$Rotation__Const__Axis__Traj_8h.html" title="sun_robot_lib/include\l/Traj_Generators/Rotation\l_Const_Axis_Traj.h" alt="" coords="419,109,591,165"/>
-<area shape="rect" id="node3" href="$Cartesian__Independent__Traj_8cpp.html" title="sun_robot_lib/src/Traj\l_Generators/Cartesian\l_Independent_Traj.cpp" alt="" coords="17,213,172,269"/>
-<area shape="rect" id="node6" href="$Rotation__Const__Axis__Traj_8cpp.html" title="sun_robot_lib/src/Traj\l_Generators/Rotation_Const\l_Axis_Traj.cpp" alt="" coords="411,213,599,269"/>
-</map>

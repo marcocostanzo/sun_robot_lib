@@ -1,7 +1,0 @@
-<map id="sun_robot_lib/include/Traj_Generators/COR_Traj.h" name="sun_robot_lib/include/Traj_Generators/COR_Traj.h">
-<area shape="rect" id="node2" href="$Cartesian__Traj__Interface_8h.html" title="Traj_Generators/Cartesian\l_Traj_Interface.h" alt="" coords="5,109,180,151"/>
-<area shape="rect" id="node7" href="$Position__Circumference__Traj_8h.html" title="Traj_Generators/Position\l_Circumference_Traj.h" alt="" coords="204,109,371,151"/>
-<area shape="rect" id="node3" href="$Traj__Generator__Interface_8h.html" title="Traj_Generators/Traj\l_Generator_Interface.h" alt="" coords="194,288,349,329"/>
-<area shape="rect" id="node8" href="$Position__Traj__Interface_8h.html" title="Traj_Generators/Position\l_Traj_Interface.h" alt="" coords="373,199,540,240"/>
-<area shape="rect" id="node11" href="$Scalar__Traj__Interface_8h.html" title="Traj_Generators/Scalar\l_Traj_Interface.h" alt="" coords="193,199,349,240"/>
-</map>

@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "_acdefgijlmoprst",
   1: "lmr",
   2: "s",
-  3: "lmr",
+  3: "clmr",
   4: "acdefgijlmoprst",
   5: "_",
   6: "r",

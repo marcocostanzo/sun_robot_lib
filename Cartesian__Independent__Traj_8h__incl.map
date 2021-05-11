@@ -1,6 +1,0 @@
-<map id="sun_robot_lib/include/Traj_Generators/Cartesian_Independent_Traj.h" name="sun_robot_lib/include/Traj_Generators/Cartesian_Independent_Traj.h">
-<area shape="rect" id="node2" href="$Cartesian__Traj__Interface_8h.html" title="Traj_Generators/Cartesian\l_Traj_Interface.h" alt="" coords="5,109,180,151"/>
-<area shape="rect" id="node7" href="$Position__Traj__Interface_8h.html" title="Traj_Generators/Position\l_Traj_Interface.h" alt="" coords="411,109,577,151"/>
-<area shape="rect" id="node10" href="$Quaternion__Traj__Interface_8h.html" title="Traj_Generators/Quaternion\l_Traj_Interface.h" alt="" coords="204,109,387,151"/>
-<area shape="rect" id="node3" href="$Traj__Generator__Interface_8h.html" title="Traj_Generators/Traj\l_Generator_Interface.h" alt="" coords="207,199,362,240"/>
-</map>

@@ -1,4 +1,5 @@
 <map id="sun::RobotLink" name="sun::RobotLink">
-<area shape="rect" id="node2" href="$classsun_1_1RobotLinkPrismatic.html" title="Prismatic Link. " alt="" coords="5,80,171,107"/>
-<area shape="rect" id="node3" href="$classsun_1_1RobotLinkRevolute.html" title="Revolute Link. " alt="" coords="195,80,357,107"/>
+<area shape="rect" id="node1" title="Abstract Class for a RobotLink." alt="" coords="135,5,254,32"/>
+<area shape="rect" id="node2" href="$classsun_1_1RobotLinkPrismatic.html" title="Prismatic Link." alt="" coords="5,80,184,107"/>
+<area shape="rect" id="node3" href="$classsun_1_1RobotLinkRevolute.html" title="Revolute Link." alt="" coords="208,80,384,107"/>
 </map>
