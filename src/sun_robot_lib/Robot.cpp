@@ -1183,18 +1183,28 @@ Vector<> Robot::grad_fcst_target_configuration(const Vector<>& q_DH, const Vecto
   {
     Vector<2> limits = _links[i]->getSoftJointLimits();
 
-    // Check Limits
-    limits[0] = _links[i]->joint_Robot2DH(limits[0]);
-    limits[1] = _links[i]->joint_Robot2DH(limits[1]);
-    if (limits[0] > limits[1])
+    // case of infinity limits
+    if(isinf(limits[0]) || isinf(limits[1]))
     {
-      double tmp = limits[0];
-      limits[0] = limits[1];
-      limits[1] = tmp;
+      d_W[i] = 0.0;
+    }
+    else
+    {
+
+      // Check Limits
+      limits[0] = _links[i]->joint_Robot2DH(limits[0]);
+      limits[1] = _links[i]->joint_Robot2DH(limits[1]);
+      if (limits[0] > limits[1])
+      {
+        double tmp = limits[0];
+        limits[0] = limits[1];
+        limits[1] = tmp;
+      }
+
+      d_W[i] = (q_DH[i] - desired_configuration[i]) / (limits[1] - limits[0]) * desired_configuration_joint_weights[i];
+
     }
 
-    d_W[i] = (q_DH[i] - desired_configuration[i]) / (limits[1] - limits[0]) * desired_configuration_joint_weights[i];
-  
     sum_w += desired_configuration_joint_weights[i];
   }
   d_W *= -1.0 / sum_w;
