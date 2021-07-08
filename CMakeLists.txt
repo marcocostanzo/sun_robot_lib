@@ -128,6 +128,11 @@ include_directories(
    #Robot
    src/sun_robot_lib/Robot.cpp
 
+   #Clik
+   src/sun_robot_lib/Clik.cpp
+   src/sun_robot_lib/ClikSingleRobot.cpp
+   src/sun_robot_lib/Clik6DQuaternionSingleRobot.cpp
+
    #Specific Robots
    src/sun_robot_lib/Robots/LBRiiwa7.cpp
    src/sun_robot_lib/Robots/MotomanSIA5F.cpp

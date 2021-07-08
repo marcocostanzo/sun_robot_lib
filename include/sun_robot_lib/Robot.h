@@ -40,12 +40,9 @@ protected:
   //! Transformation matrix of link_ w.r.t. base frame
   TooN::Matrix<4, 4> _b_T_0;  // T_0^b
   //! Links
-  std::vector<RobotLinkPtr> _links;
+  std::vector<std::shared_ptr<RobotLink>> _links;
   //! Transformation matrix of effector w.r.t. link_n frame
   TooN::Matrix<4, 4> _n_T_e;  // T_e^n
-
-  //! Joint speed saturation used in dls for clik
-  double _dls_joint_speed_saturation;  // Used in clik
 
   //! Name of the robot
   std::string _name;
@@ -68,19 +65,20 @@ public:
   /*!
       Full constructor
   */
-  Robot(const std::vector<RobotLinkPtr>& links, const TooN::Matrix<4, 4>& b_T_0, const TooN::Matrix<4, 4>& n_T_e,
-        double dls_joint_speed_saturation, const std::string& name);
+  Robot(const std::vector<std::shared_ptr<RobotLink>>& links, const TooN::Matrix<4, 4>& b_T_0, const TooN::Matrix<4, 4>& n_T_e,
+        const std::string& name);
 
   /*!
       Constuctor without links
 
       usefull to use robot.push_back_link(...)
   */
-  Robot(const TooN::Matrix<4, 4>& b_T_0, const TooN::Matrix<4, 4>& n_T_e, double dls_joint_speed_saturation,
+  Robot(const TooN::Matrix<4, 4>& b_T_0, const TooN::Matrix<4, 4>& n_T_e,
         const std::string& name);
-  /*!
+  /*
       Copy Constructor
-  */
+      NB: the link objects are shared!!
+ */
   Robot(const Robot& robot);
 
   /*=====END CONSTRUCTORS=========*/
@@ -110,11 +108,6 @@ public:
   /*=========GETTERS=========*/
 
   /*!
-      get Joint speed saturation used in dls for clik
-  */
-  virtual double getDLSJointSpeedSaturation() const;
-
-  /*!
       get number of joints
   */
   virtual int getNumJoints() const;
@@ -128,14 +121,14 @@ public:
       get Vector of links
       this function makes a copy
   */
-  virtual std::vector<RobotLinkPtr> getLinks() const;
+  virtual std::vector<std::shared_ptr<RobotLink>> getLinks() const;
 
   /*!
       get reference of link i
 
       Note: smart_pointer
   */
-  virtual RobotLinkPtr& getLink(int i);
+  virtual std::shared_ptr<RobotLink> getLink(int i) const;
 
   /*!
       Get Transformation matrix of link_0 w.r.t. base frame
@@ -172,11 +165,6 @@ public:
   /*=========SETTERS=========*/
 
   /*!
-      set Joint speed saturation used in dls for clik
-  */
-  virtual void setDLSJointSpeedSaturation(double dls_joint_speed_saturation);
-
-  /*!
       Set Transformation matrix of link_0 w.r.t. base frame
   */
   virtual void setbT0(const TooN::Matrix<4, 4>& b_T_0);
@@ -184,22 +172,27 @@ public:
   /*!
       Set vector of links
   */
-  virtual void setLinks(const std::vector<RobotLinkPtr>& links);
+  virtual void setLinks(const std::vector<std::shared_ptr<RobotLink>>& links);
 
   /*!
       Add a link to the kinematic chain
   */
-  virtual void push_back_link(const RobotLink& link);
+  virtual void push_back_link(const std::shared_ptr<RobotLink>& link);
+
+  /*!
+      Add a link to the kinematic chain
+  */
+  virtual void push_back_link(const RobotLink&& link);
 
   /*!
       overloaded operator: Add a link to the kinematic chain
   */
-  virtual Robot& operator+=(const RobotLink& link);
+  virtual Robot& operator+=(const std::shared_ptr<RobotLink>& link);
 
   /*!
       overloaded operator: Constuct a new Robot object and add a link to the kinematic chain
   */
-  virtual Robot operator+(const RobotLink& link) const;
+  virtual Robot operator+(const std::shared_ptr<RobotLink>& link) const;
 
   /*!
       Remove last link of the chain
@@ -444,161 +437,6 @@ public:
 
   /*========END Jacobians=========*/
 
-  /*========CLIK=========*/
-
-  /*!
-      Very General CLIK
-      
-      Implements the general version of the clik
-      
-      Inputs:
-          - qDH_k: joints at time k
-          - error: error vector (use the appropriate error type here)
-          - jacob: Jacobian calculated in qDH_k (use appropriate jacob function here)
-          - veld: desired velocity
-          - gain: CLIK Gain
-          - Ts: sampling time
-          - gain_null_space: Gain for second objective
-          - q0_dot: velocity to be projected into the null space
-
-      Outputs:
-          - return: qDH_k+1 joints at time k+1
-          - qpDH: joints velocity at time k+1
-  */
-  virtual TooN::Vector<> clik(const TooN::Vector<>& qDH_k, const TooN::Vector<6>& error, const TooN::Matrix<>& jacob,
-                              const TooN::Vector<6>& veld, double gain, double Ts, double gain_null_space,
-                              const TooN::Vector<>& q0_dot,
-                              // Return Vars
-                              TooN::Vector<>& qpDH);
-
-  /*!
-      Clik using Quaternions FULL VERSION
-      
-      Inputs:
-          - qDH_k: joints at time k
-          - pd: desired posotion
-          - Qd: deisred quaternion
-          - oldQ: last quaternion at time k-1 (needed for continuity)
-          - dpd: desired position velocity
-          - omegad: desired angular velocity
-          - mask: bitmask, if the i-th element is 0 then the i-th operative space coordinate will not be used in the
-     
-     error computation
-          - gain: CLIK Gain
-          - Ts: sampling time
-          - gain_null_space: Gain for second objective
-          - q0_p: velocity to be projected into the null space
-      
-      Outputs:
-          - return: qDH_k+1 joints at time k+1
-          - qpDH: joints velocity at time k+1
-          - error: error vector at time k
-          - newQ: Quaternion at time k (usefull for continuity in the next call of these function)
-  */
-  virtual TooN::Vector<> clik(const TooN::Vector<>& qDH_k, const TooN::Vector<3>& pd, const UnitQuaternion& Qd,
-                              const UnitQuaternion& oldQ, const TooN::Vector<3>& dpd, const TooN::Vector<3>& omegad,
-                              const TooN::Vector<6, int>& mask, double gain, double Ts, double gain_null_space,
-                              const TooN::Vector<>& q0_p,
-                              // Return Vars
-                              TooN::Vector<>& qpDH, TooN::Vector<6>& error, UnitQuaternion& newQ);
-
-  /*!
-      Clik using Quaternions
-
-      Inputs:
-          - qDH_k: joints at time k
-          - pd: desired posotion
-          - Qd: deisred quaternion
-          - oldQ: last quaternion at time k-1 (needed for continuity)
-          - dpd: desired position velocity
-          - omegad: desired angular velocity
-          - gain: CLIK Gain
-          - Ts: sampling time
-          - gain_null_space: Gain for second objective
-          - q0_p: velocity to be projected into the null space
-      
-      Outputs:
-          - return: qDH_k+1 joints at time k+1
-          - qpDH: joints velocity at time k+1
-          - error: error vector at time k
-          - newQ: Quaternion at time k (usefull for continuity in the next call of these function)
-  */
-  virtual TooN::Vector<> clik(const TooN::Vector<>& qDH_k,  // Actual joints positions
-                              const TooN::Vector<3>& pd, const UnitQuaternion& Qd,
-                              const UnitQuaternion& oldQ,  // For Quaternion Continuity
-                              const TooN::Vector<3>& dpd, const TooN::Vector<3>& omegad,
-                              double gain,             // CLIK Gain
-                              double Ts,               // sampling time
-                              double gain_null_space,  // Gain for second objective
-                              const TooN::Vector<>& q0_p,
-                              // Return Vars
-                              TooN::Vector<>& qpDH, TooN::Vector<6>& error, UnitQuaternion& newQ);
-
-  /*!
-      Clik using Quaternions, the null space is used to maximize distance from soft joints limits
-      
-      Inputs:
-          - qDH_k: joints at time k
-          - pd: desired posotion
-          - Qd: deisred quaternion
-          - oldQ: last quaternion at time k-1 (needed for continuity)
-          - dpd: desired position velocity
-          - omegad: desired angular velocity
-          - mask: bitmask, if the i-th element is 0 then the i-th operative space coordinate will not be used in the
-     
-     error computation
-          - gain: CLIK Gain
-          - Ts: sampling time
-          - gain_null_space: Gain for second objective
-          - desired_configuration: target for joint position (used into the second objective obj)
-          - desired_configuration_joint_weights: weights for joints in the second objective
-      
-      Outputs:
-          - return: qDH_k+1 joints at time k+1
-          - qpDH: joints velocity at time k+1
-          - error: error vector at time k
-          - newQ: Quaternion at time k (usefull for continuity in the next call of these function)
-  */
-  virtual TooN::Vector<> clik(const TooN::Vector<>& qDH_k, const TooN::Vector<3>& pd, const UnitQuaternion& Qd,
-                              const UnitQuaternion& oldQ, const TooN::Vector<3>& dpd, const TooN::Vector<3>& omegad,
-                              const TooN::Vector<6, int>& mask, double gain, double Ts, double gain_null_space,
-                              const TooN::Vector<>& desired_configuration,
-                              const TooN::Vector<>& desired_configuration_joint_weights,
-                              // Return Vars
-                              TooN::Vector<>& qpDH, TooN::Vector<6>& error, UnitQuaternion& newQ);
-
-  /*!
-      Clik using Quaternions, the null space is used to maximize distance from soft joints limits
-      
-      Inputs:
-          - qDH_k: joints at time k
-          - pd: desired posotion
-          - Qd: deisred quaternion
-          - oldQ: last quaternion at time k-1 (needed for continuity)
-          - dpd: desired position velocity
-          - omegad: desired angular velocity
-          - gain: CLIK Gain
-          - Ts: sampling time
-          - gain_null_space: Gain for second objective
-          - desired_configuration: target for joint position (used into the second objective obj)
-          - desired_configuration_joint_weights: weights for joints in the second objective
-      
-      Outputs:
-          - return: qDH_k+1 joints at time k+1
-          - qpDH: joints velocity at time k+1
-          - error: error vector at time k
-          - newQ: Quaternion at time k (usefull for continuity in the next call of these function)
-  */
-  virtual TooN::Vector<> clik(const TooN::Vector<>& qDH_k, const TooN::Vector<3>& pd, const UnitQuaternion& Qd,
-                              const UnitQuaternion& oldQ, const TooN::Vector<3>& dpd, const TooN::Vector<3>& omegad,
-                              double gain, double Ts, double gain_null_space,
-                              const TooN::Vector<>& desired_configuration,
-                              const TooN::Vector<>& desired_configuration_joint_weights,
-                              // Return Vars
-                              TooN::Vector<>& qpDH, TooN::Vector<6>& error, UnitQuaternion& newQ);
-
-  /*========END CLIK=========*/
-
   /*====== COST FUNCTIONS FOR NULL SPACE ======*/
 
   /*!
@@ -626,7 +464,7 @@ using RobotPtr = std::unique_ptr<Robot>;
 
   Construct a new Robot object with link1 as the first link and link2 as second link
 */
-Robot operator+(const RobotLink& link1, const RobotLink& link2);
+Robot operator+(const std::shared_ptr<RobotLink>& link1, const std::shared_ptr<RobotLink>& link2);
 
 }  // namespace sun
 

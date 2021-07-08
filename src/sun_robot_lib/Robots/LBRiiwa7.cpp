@@ -33,8 +33,8 @@ namespace sun
 /*
     Full constructor
 */
-LBRiiwa7::LBRiiwa7(const Matrix<4, 4>& n_T_e, double dls_joint_speed_saturation, const string& name)
-  : Robot(transl(0.0, 0.0, 0.340), n_T_e, dls_joint_speed_saturation, name)
+LBRiiwa7::LBRiiwa7(const Matrix<4, 4>& n_T_e, const string& name)
+  : Robot(transl(0.0, 0.0, 0.340), n_T_e, name)
 {
   _model = LBRIIWA7_MODEL_STR;
   // L1
@@ -127,7 +127,7 @@ LBRiiwa7::LBRiiwa7(const Matrix<4, 4>& n_T_e, double dls_joint_speed_saturation,
 /*
     Constructor with name only
 */
-LBRiiwa7::LBRiiwa7(const std::string& name) : LBRiiwa7(Identity, 2.0, name)
+LBRiiwa7::LBRiiwa7(const std::string& name) : LBRiiwa7(Identity, name)
 {
 }
 

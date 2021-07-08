@@ -33,8 +33,8 @@ namespace sun
 /*
     Full constructor
 */
-MotomanSIA5F::MotomanSIA5F(const Matrix<4, 4>& n_T_e, double dls_joint_speed_saturation, const string& name)
-  : Robot(transl(0.0, 0.0, 0.3095), n_T_e, dls_joint_speed_saturation, name)
+MotomanSIA5F::MotomanSIA5F(const Matrix<4, 4>& n_T_e, const string& name)
+  : Robot(transl(0.0, 0.0, 0.3095), n_T_e, name)
 {
   _model = MOTOMANSIA5F_MODEL_STR;
   // L1
@@ -126,7 +126,7 @@ MotomanSIA5F::MotomanSIA5F(const Matrix<4, 4>& n_T_e, double dls_joint_speed_sat
 /*
     Constructor with name only
 */
-MotomanSIA5F::MotomanSIA5F(const std::string& name) : MotomanSIA5F(Identity, 5.0, name)
+MotomanSIA5F::MotomanSIA5F(const std::string& name) : MotomanSIA5F(Identity, name)
 {
 }
 

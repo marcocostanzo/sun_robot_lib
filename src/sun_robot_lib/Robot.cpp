@@ -40,7 +40,6 @@ Robot::Robot()
   _n_T_e = Identity;
   _name = string("Robot_No_Name");
   _model = string("Robot_No_Model");
-  _dls_joint_speed_saturation = 2.0;
 }
 
 Robot::Robot(const string& name)
@@ -49,48 +48,38 @@ Robot::Robot(const string& name)
   _n_T_e = Identity;
   _name = name;
   _model = string("Robot_No_Model");
-  _dls_joint_speed_saturation = 2.0;
 }
 
 /*
     Full constructor
 */
-Robot::Robot(const vector<RobotLinkPtr>& links, const Matrix<4, 4>& b_T_0, const Matrix<4, 4>& n_T_e,
-             double dls_joint_speed_saturation, const string& name)
-  : _b_T_0(b_T_0), _n_T_e(n_T_e), _dls_joint_speed_saturation(dls_joint_speed_saturation), _name(name)
+Robot::Robot(const vector<std::shared_ptr<RobotLink>>& links, const Matrix<4, 4>& b_T_0, const Matrix<4, 4>& n_T_e,
+              const string& name)
+  : _b_T_0(b_T_0), _n_T_e(n_T_e), _name(name), _links(links)
 {
-  // Clone links
-  for (const auto& link : links)
-  {
-    _links.push_back(RobotLinkPtr(link->clone()));
-  }
 }
 
 /*
     Constuctor without links
     usefull to use robot.push_back_link(...)
 */
-Robot::Robot(const Matrix<4, 4>& b_T_0, const Matrix<4, 4>& n_T_e, double dls_joint_speed_saturation,
+Robot::Robot(const Matrix<4, 4>& b_T_0, const Matrix<4, 4>& n_T_e,
              const string& name)
-  : _b_T_0(b_T_0), _n_T_e(n_T_e), _dls_joint_speed_saturation(dls_joint_speed_saturation), _name(name)
+  : _b_T_0(b_T_0), _n_T_e(n_T_e), _name(name)
 {
 }
 
 /*
     Copy Constructor
+    NB: the link objects are shared!!
 */
 Robot::Robot(const Robot& robot)
 {
   _b_T_0 = robot._b_T_0;
   _n_T_e = robot._n_T_e;
-  _dls_joint_speed_saturation = robot._dls_joint_speed_saturation;
   _name = robot._name;
   _model = robot._model;
-  // Clone links
-  for (const auto& link : robot._links)
-  {
-    _links.push_back(RobotLinkPtr(link->clone()));
-  }
+  _links = robot._links;
 }
 
 /*=====END CONSTRUCTORS=========*/
@@ -197,14 +186,6 @@ void Robot::dispPosition(const Vector<>& q_DH)
 /*=========GETTERS=========*/
 
 /*
-    get Joint speed saturation used in dls for clik
-*/
-double Robot::getDLSJointSpeedSaturation() const
-{
-  return _dls_joint_speed_saturation;
-}
-
-/*
     get number of joints
 */
 int Robot::getNumJoints() const
@@ -224,21 +205,16 @@ Matrix<4, 4> Robot::getbT0() const
     get Vector of links
     this function makes a copy
 */
-vector<RobotLinkPtr> Robot::getLinks() const
+vector<std::shared_ptr<RobotLink>> Robot::getLinks() const
 {
-  vector<RobotLinkPtr> out;
-  for (const auto& element : _links)
-  {
-    out.push_back(RobotLinkPtr(element->clone()));
-  }
-  return out;
+  return _links;
 }
 
 /*
     get reference of link i
     Note: smart_pointer
 */
-RobotLinkPtr& Robot::getLink(int i)
+std::shared_ptr<RobotLink> Robot::getLink(int i) const
 {
   return _links[i];
 }
@@ -307,14 +283,6 @@ Robot* Robot::clone() const
 /*=========SETTERS=========*/
 
 /*
-    set Joint speed saturation used in dls for clik
-*/
-void Robot::setDLSJointSpeedSaturation(double dls_joint_speed_saturation)
-{
-  _dls_joint_speed_saturation = dls_joint_speed_saturation;
-}
-
-/*
     Set Transformation matrix of link_0 w.r.t. base frame
 */
 void Robot::setbT0(const Matrix<4, 4>& b_T_0)
@@ -326,27 +294,32 @@ void Robot::setbT0(const Matrix<4, 4>& b_T_0)
 /*
     Set vector of links
 */
-void Robot::setLinks(const vector<RobotLinkPtr>& links)
+void Robot::setLinks(const vector<std::shared_ptr<RobotLink>>& links)
 {
   _links.clear();
-  for (const auto& element : links)
-  {
-    _links.push_back(RobotLinkPtr(element->clone()));
-  }
+  _links = links;
 }
 
 /*
     Add a link to the kinematic chain
 */
-void Robot::push_back_link(const RobotLink& link)
+void Robot::push_back_link(const std::shared_ptr<RobotLink>& link)
 {
-  _links.push_back(RobotLinkPtr(link.clone()));
+  _links.push_back(link);
+}
+
+/*!
+      Add a link to the kinematic chain
+  */
+void Robot::push_back_link(const RobotLink&& link)
+{
+  push_back_link(std::shared_ptr<RobotLink>(link.clone()));
 }
 
 /*
     overloaded operator: Add a link to the kinematic chain
 */
-Robot& Robot::operator+=(const RobotLink& link)
+Robot& Robot::operator+=(const std::shared_ptr<RobotLink>& link)
 {
   push_back_link(link);
   return *this;
@@ -355,7 +328,7 @@ Robot& Robot::operator+=(const RobotLink& link)
 /*
     overloaded operator: Constuct a new Robot object and add a link to the kinematic chain
 */
-Robot Robot::operator+(const RobotLink& link) const
+Robot Robot::operator+(const std::shared_ptr<RobotLink>& link) const
 {
   Robot out = Robot(*this);
   out.push_back_link(link);
@@ -931,240 +904,6 @@ Matrix<> Robot::change_jacob_frame(Matrix<> b_J, const Matrix<3, 3>& u_R_b)
 
 /*========END Jacobians=========*/
 
-/*========CLIK=========*/
-
-/*
-    Very General CLIK
-    Implements the general version of the clik
-    Inputs:
-        - qDH_k: joints at time k
-        - error: error vector (use the appropriate error type here)
-        - jacob: Jacobian calculated in qDH_k (use appropriate jacob function here)
-        - veld: desired velocity
-        - gain: CLIK Gain
-        - Ts: sampling time
-        - gain_null_space: Gain for second objective
-        - q0_p: velocity to be projected into the null space
-    Outputs:
-        return: qDH_k+1 joints at time k+1
-        qpDH: joints velocity at time k+1
-*/
-Vector<> Robot::clik(const Vector<>& qDH_k, const Vector<6>& error, const Matrix<>& jacob, const Vector<6>& veld,
-                     double gain, double Ts, double gain_null_space, const Vector<>& q0_p,
-                     // Return Vars
-                     Vector<>& qpDH)
-{
-  // Method without the DLS
-  // SVD<> J_svd(jacob);
-  // qpDH = J_svd.backsub(veld + gain * error, ROBOT_CLIK_NO_DLS_CONDITION_NUMBER);
-
-  // Method with the DLS
-  Vector<6> vel_e = (veld + gain * error);
-  double damping = norm(vel_e) / _dls_joint_speed_saturation;
-  Matrix<> J_pinv_dls = pinv_DLS(jacob, damping);
-  qpDH = J_pinv_dls * vel_e;
-
-  // Null space
-  if (gain_null_space != 0.0)
-  {
-    qpDH += gain_null_space * nullSpaceProj(jacob, J_pinv_dls) * q0_p;
-  }
-
-  return (qDH_k + qpDH * Ts);
-}
-
-/*
-    Clik using Quaternions FULL VERSION
-    Inputs:
-        - qDH_k: joints at time k
-        - pd: desired posotion
-        - Qd: deisred quaternion
-        - oldQ: last quaternion at time k-1 (needed for continuity)
-        - dpd: desired position velocity
-        - omegad: desired angular velocity
-        - mask: bitmask, if the i-th element is 0 then the i-th operative space coordinate will not be used in the error
-   computation
-        - gain: CLIK Gain
-        - Ts: sampling time
-        - gain_null_space: Gain for second objective
-        - q0_p: velocity to be projected into the null space
-    Outputs:
-        return: qDH_k+1 joints at time k+1
-        qpDH: joints velocity at time k+1
-        error: error vector at time k
-        actualQ: Quaternion at time k (usefull for continuity in the next call of these functions)
-*/
-Vector<> Robot::clik(const Vector<>& qDH_k, const Vector<3>& pd, const UnitQuaternion& Qd, const UnitQuaternion& oldQ,
-                     const Vector<3>& dpd, const Vector<3>& omegad, const Vector<6, int>& mask, double gain, double Ts,
-                     double gain_null_space, const Vector<>& q0_p,
-                     // Return Vars
-                     Vector<>& qpDH, Vector<6>& error, UnitQuaternion& actualQ)
-{
-  // Compute Error
-  // fkine
-  Matrix<4, 4> b_T_e = fkine(qDH_k);
-  Vector<3> position = b_T_e.T()[3].slice<0, 3>();
-  actualQ = UnitQuaternion(b_T_e, oldQ);
-  // positionError
-  error.slice<0, 3>() = pd - position;
-  // orientationError
-  UnitQuaternion deltaQ = Qd / actualQ;
-  error.slice<3, 3>() = deltaQ.getV();
-
-  // Use the geometric Jacobian
-  Matrix<> jacob = jacob_geometric(qDH_k);
-
-  // Construct veld
-  Vector<6> veld;
-  veld.slice<0, 3>() = dpd;
-  veld.slice<3, 3>() = omegad;
-
-  // Apply mask
-  for (int i = 0; i < 6; i++)
-  {
-    if (mask[i] == 0)
-    {
-      error[i] = 0.0;
-      jacob[i] = Zeros;
-      veld[i] = 0.0;
-    }
-  }
-
-  return clik(qDH_k,            // Actual joints positions
-              error,            // Actual error
-              jacob,            // Jacobian calculated in qDH_k (use appropriate jacob function here)
-              veld,             // desired velocity
-              gain,             // CLIK Gain
-              Ts,               // sampling time
-              gain_null_space,  // Gain for second objective
-              q0_p,
-              // Return Vars
-              qpDH);
-}
-
-/*
-    Clik using Quaternions
-    Inputs:
-        - qDH_k: joints at time k
-        - pd: desired posotion
-        - Qd: deisred quaternion
-        - oldQ: last quaternion at time k-1 (needed for continuity)
-        - dpd: desired position velocity
-        - omegad: desired angular velocity
-        - gain: CLIK Gain
-        - Ts: sampling time
-        - gain_null_space: Gain for second objective
-        - q0_p: velocity to be projected into the null space
-    Outputs:
-        return: qDH_k+1 joints at time k+1
-        qpDH: joints velocity at time k+1
-        error: error vector at time k
-        actualQ: Quaternion at time k (usefull for continuity in the next call of these functions)
-*/
-Vector<> Robot::clik(const Vector<>& qDH_k,  // Actual joints positions
-                     const Vector<3>& pd, const UnitQuaternion& Qd,
-                     const UnitQuaternion& oldQ,  // For Quaternion Continuity
-                     const Vector<3>& dpd, const Vector<3>& omegad,
-                     double gain,             // CLIK Gain
-                     double Ts,               // sampling time
-                     double gain_null_space,  // Gain for second objective
-                     const Vector<>& q0_p,
-                     // Return Vars
-                     Vector<>& qpDH, Vector<6>& error, UnitQuaternion& actualQ)
-{
-  return clik(qDH_k,  // Actual joints positions
-              pd, Qd,
-              oldQ,  // For Quaternion Continuity
-              dpd, omegad, Ones,
-              gain,             // CLIK Gain
-              Ts,               // sampling time
-              gain_null_space,  // Gain for second objective
-              q0_p,
-              // Return Vars
-              qpDH, error, actualQ);
-}
-
-/*
-    Clik using Quaternions, the null space is used to maximize distance from soft joints limits
-    Inputs:
-        - qDH_k: joints at time k
-        - pd: desired posotion
-        - Qd: deisred quaternion
-        - oldQ: last quaternion at time k-1 (needed for continuity)
-        - dpd: desired position velocity
-        - omegad: desired angular velocity
-        - mask: bitmask, if the i-th element is 0 then the i-th operative space coordinate will not be used in the error
-   computation
-        - gain: CLIK Gain
-        - Ts: sampling time
-        - gain_null_space: Gain for second objective
-        - desired_configuration: target for joint position (used into the second objective obj)
-        - desired_configuration_joint_weights: weights for joints in the second objective
-    Outputs:
-        return: qDH_k+1 joints at time k+1
-        qpDH: joints velocity at time k+1
-        error: error vector at time k
-        actualQ: Quaternion at time k (usefull for continuity in the next call of these functions)
-*/
-Vector<> Robot::clik(const Vector<>& qDH_k, const Vector<3>& pd, const UnitQuaternion& Qd, const UnitQuaternion& oldQ,
-                     const Vector<3>& dpd, const Vector<3>& omegad, const Vector<6, int>& mask, double gain, double Ts,
-                     double gain_null_space, const Vector<>& desired_configuration,
-                     const Vector<>& desired_configuration_joint_weights,
-                     // Return Vars
-                     Vector<>& qpDH, Vector<6>& error, UnitQuaternion& actualQ)
-{
-  return clik(qDH_k,  // Actual joints positions
-              pd, Qd,
-              oldQ,  // For Quaternion Continuity
-              dpd, omegad, mask,
-              gain,             // CLIK Gain
-              Ts,               // sampling time
-              gain_null_space,  // Gain for second objective
-              grad_fcst_target_configuration(qDH_k, desired_configuration, desired_configuration_joint_weights),
-              // Return Vars
-              qpDH, error, actualQ);
-}
-
-/*
-    Clik using Quaternions, the null space is used to maximize distance from soft joints limits
-    Inputs:
-        - qDH_k: joints at time k
-        - pd: desired posotion
-        - Qd: deisred quaternion
-        - oldQ: last quaternion at time k-1 (needed for continuity)
-        - dpd: desired position velocity
-        - omegad: desired angular velocity
-        - gain: CLIK Gain
-        - Ts: sampling time
-        - gain_null_space: Gain for second objective
-        - desired_configuration: target for joint position (used into the second objective obj)
-        - desired_configuration_joint_weights: weights for joints in the second objective
-    Outputs:
-        return: qDH_k+1 joints at time k+1
-        qpDH: joints velocity at time k+1
-        error: error vector at time k
-        actualQ: Quaternion at time k (usefull for continuity in the next call of these functions)
-*/
-Vector<> Robot::clik(const Vector<>& qDH_k, const Vector<3>& pd, const UnitQuaternion& Qd, const UnitQuaternion& oldQ,
-                     const Vector<3>& dpd, const Vector<3>& omegad, double gain, double Ts, double gain_null_space,
-                     const Vector<>& desired_configuration, const Vector<>& desired_configuration_joint_weights,
-                     // Return Vars
-                     Vector<>& qpDH, Vector<6>& error, UnitQuaternion& actualQ)
-{
-  return clik(qDH_k,  // Actual joints positions
-              pd, Qd,
-              oldQ,  // For Quaternion Continuity
-              dpd, omegad, Ones,
-              gain,             // CLIK Gain
-              Ts,               // sampling time
-              gain_null_space,  // Gain for second objective
-              grad_fcst_target_configuration(qDH_k, desired_configuration, desired_configuration_joint_weights),
-              // Return Vars
-              qpDH, error, actualQ);
-}
-
-/*========END CLIK=========*/
-
 /*====== COST FUNCTIONS FOR NULL SPACE ======*/
 
 /*
@@ -1219,7 +958,7 @@ Vector<> Robot::grad_fcst_target_configuration(const Vector<>& q_DH, const Vecto
   overloaded operator +
   Construct a new Robot object with link1 as the first link and link2 as second link
 */
-Robot operator+(const RobotLink& link1, const RobotLink& link2)
+Robot operator+(const std::shared_ptr<RobotLink>& link1, const std::shared_ptr<RobotLink>& link2)
 {
   Robot out = Robot();
   out.push_back_link(link1);

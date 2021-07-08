@@ -36,7 +36,7 @@ public:
   /*!
       Full constructor
   */
-  LBRiiwa7(const TooN::Matrix<4, 4>& n_T_e, double dls_joint_speed_saturation, const std::string& name);
+  LBRiiwa7(const TooN::Matrix<4, 4>& n_T_e, const std::string& name);
 
   /*!
       Constructor with name only
