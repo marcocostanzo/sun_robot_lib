@@ -121,14 +121,14 @@ public:
       get Vector of links
       this function makes a copy
   */
-  virtual std::vector<std::shared_ptr<RobotLink>> getLinks() const;
+  virtual const std::vector<std::shared_ptr<RobotLink>>& getLinks() const;
 
   /*!
       get reference of link i
 
       Note: smart_pointer
   */
-  virtual std::shared_ptr<RobotLink> getLink(int i) const;
+  virtual const std::shared_ptr<RobotLink>& getLink(int i) const;
 
   /*!
       Get Transformation matrix of link_0 w.r.t. base frame
@@ -154,6 +154,8 @@ public:
       get a string of joint names given the bitmap
   */
   virtual std::string jointsNameFromBitMask(const std::vector<bool>& jointMask) const;
+
+  virtual TooN::Vector<> getCenterOfSoftJointLimits() const;
 
   /*!
       Clone the object
@@ -436,22 +438,6 @@ public:
   static TooN::Matrix<> change_jacob_frame(TooN::Matrix<> b_J, const TooN::Matrix<3, 3>& u_R_b);
 
   /*========END Jacobians=========*/
-
-  /*====== COST FUNCTIONS FOR NULL SPACE ======*/
-
-  /*!
-      Gradient of cost function to minimize the distance from joints centers
-
-      Inputs:
-          -q_DH: joint positions
-          -desired_configuration: center of joints
-          -desired_configuration_joint_weights: weigths for the joints
-  */
-  virtual TooN::Vector<> grad_fcst_target_configuration(const TooN::Vector<>& q_DH,
-                                                        const TooN::Vector<>& desired_configuration,
-                                                        const TooN::Vector<>& desired_configuration_joint_weights);
-
-  /*====== END COST FUNCTIONS FOR NULL SPACE ======*/
 
 };  // END CLASS
 

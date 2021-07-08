@@ -4,40 +4,44 @@
 #include "sun_robot_lib/Clik.h"
 #include "sun_robot_lib/Robot.h"
 
-namespace sun
-{
+namespace sun {
 
-    /////////////////////////////////////////////////
-    class ClikSingleRobot : public Clik
-    {
+/////////////////////////////////////////////////
+class ClikSingleRobot : public Clik {
 
-    private:
-    protected:
-        std::shared_ptr<Robot> robot_;
+private:
+protected:
+public:
+  std::shared_ptr<Robot> robot_;
 
-    public:
-        /*=========CONSTRUCTORS=========*/
+  /*=========CONSTRUCTORS=========*/
 
-        ClikSingleRobot(const std::shared_ptr<Robot> &robot, const TooN::Vector<> &qDH0);
+  ClikSingleRobot(const std::shared_ptr<Robot> &robot);
 
-        /*========GETTERS============*/
+  /*========GETTERS============*/
 
-        virtual TooN::Vector<> getJointsRobot() const override;
+  /*========SETTERS============*/
 
-        virtual TooN::Vector<> getJointsVelRobot() const override;
+  /*========CLIK=========*/
 
-        /*========SETTERS============*/
+  virtual bool
+  exceededHardJointLimits(const TooN::Vector<> &qDH) const override;
 
-        /*========CLIK=========*/
+  virtual bool
+  exceededHardJointVelLimits(const TooN::Vector<> &qDH_dot) const override;
 
-        virtual bool checkHardJointLimits() const override;
+  virtual bool
+  exceededSoftJointLimits(const TooN::Vector<> &qDH) const override;
 
-        virtual bool checkHardJointVelLimits() const override;
+  virtual bool
+  exceededSoftJointVelLimits(const TooN::Vector<> &qDH_dot) const override;
 
-        virtual bool checkSoftJointLimits() const override;
+  virtual TooN::Vector<> getClikError(const TooN::Vector<> &q_DH) override = 0;
+  virtual TooN::Matrix<>
+  getClikJacobian(const TooN::Vector<> &q_DH) override = 0;
+  virtual TooN::Vector<>
+  getDesiredCartesianTwist(const TooN::Vector<> &q_DH) override = 0;
+};
 
-        virtual bool checkSoftJointVelLimits() const override;
-    };
-
-}
+} // namespace sun
 #endif

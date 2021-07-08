@@ -1,47 +1,37 @@
 
 #include "sun_robot_lib/ClikSingleRobot.h"
 
-namespace sun
-{
+namespace sun {
 
-    /*=========CONSTRUCTORS=========*/
+/*=========CONSTRUCTORS=========*/
 
-    ClikSingleRobot::ClikSingleRobot(const std::shared_ptr<Robot> &robot, const TooN::Vector<> &qDH0) : robot_(robot), Clik(qDH0) {}
+ClikSingleRobot::ClikSingleRobot(const std::shared_ptr<Robot> &robot)
+    : robot_(robot) {}
 
-    /*========GETTERS============*/
+/*========GETTERS============*/
 
-    TooN::Vector<> ClikSingleRobot::getJointsRobot() const
-    {
-        robot_->joints_DH2Robot(qDH_k_);
-    }
+/*========SETTERS============*/
 
-    TooN::Vector<> ClikSingleRobot::getJointsVelRobot() const
-    {
-        robot_->jointsvel_DH2Robot(qDHdot_k_);
-    }
+/*========CLIK=========*/
 
-    /*========SETTERS============*/
-
-    /*========CLIK=========*/
-
-    bool ClikSingleRobot::checkHardJointLimits() const
-    {
-        return robot_->exceededHardJointLimits(getJointsRobot());
-    }
-
-    bool ClikSingleRobot::checkHardJointVelLimits() const
-    {
-        return robot_->exceededHardVelocityLimits(getJointsRobot());
-    }
-
-    bool ClikSingleRobot::checkSoftJointLimits() const
-    {
-        return robot_->exceededSoftJointLimits(getJointsRobot());
-    }
-
-    bool ClikSingleRobot::checkSoftJointVelLimits() const
-    {
-        return robot_->exceededSoftVelocityLimits(getJointsRobot());
-    }
-
+bool ClikSingleRobot::exceededHardJointLimits(const TooN::Vector<> &qDH) const {
+  return robot_->exceededHardJointLimits(robot_->joints_DH2Robot(qDH));
 }
+
+bool ClikSingleRobot::exceededHardJointVelLimits(
+    const TooN::Vector<> &qDH_dot) const {
+  return robot_->exceededHardVelocityLimits(
+      robot_->jointsvel_DH2Robot(qDH_dot));
+}
+
+bool ClikSingleRobot::exceededSoftJointLimits(const TooN::Vector<> &qDH) const {
+  return robot_->exceededSoftJointLimits(robot_->joints_DH2Robot(qDH));
+}
+
+bool ClikSingleRobot::exceededSoftJointVelLimits(
+    const TooN::Vector<> &qDH_dot) const {
+  return robot_->exceededSoftVelocityLimits(
+      robot_->jointsvel_DH2Robot(qDH_dot));
+}
+
+} // namespace sun

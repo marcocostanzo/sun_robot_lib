@@ -3,31 +3,42 @@
 
 #include "sun_robot_lib/ClikSingleRobot.h"
 
-namespace sun
-{
+namespace sun {
 
-    /////////////////////////////////////////////////
-    class Clik6DQuaternionSingleRobot : public ClikSingleRobot
-    {
+/////////////////////////////////////////////////
+class Clik6DQuaternionSingleRobot : public ClikSingleRobot {
 
-    private:
-    protected:
-        //! For the continuity
-        UnitQuaternion oldQuaternion_;
+private:
+protected:
+  //! For the continuity
+  UnitQuaternion currentQuaternion_;
 
-    public:
-        /*=========CONSTRUCTORS=========*/
+public:
+  TooN::Vector<3> desiredPosition_;
+  UnitQuaternion desiredQuaternion_;
 
-        Clik6DQuaternionSingleRobot(const std::shared_ptr<Robot> &robot, const TooN::Vector<> &qDH0);
+  TooN::Vector<3> desiredLinearVelocity_;
+  TooN::Vector<3> desiredAngularVelocity_;
 
-        /*========GETTERS============*/
+  void resetCurrentQaternion();
 
-        /*========SETTERS============*/
+  /*=========CONSTRUCTORS=========*/
 
-        /*========CLIK=========*/
+  Clik6DQuaternionSingleRobot(const std::shared_ptr<Robot> &robot);
 
-        void exec_single_step(const TooN::Vector<3> &pd, const UnitQuaternion &quatd, const TooN::Vector<3> &dpd, const TooN::Vector<3> &omegad, const TooN::Vector<> &qDHdot_secondary_obj);
-    };
+  /*========GETTERS============*/
 
-}
+  /*========SETTERS============*/
+
+  virtual void resetDesiredCartesianTwist();
+
+  /*========CLIK=========*/
+
+  virtual TooN::Vector<> getClikError(const TooN::Vector<> &q_DH) override;
+  virtual TooN::Matrix<> getClikJacobian(const TooN::Vector<> &q_DH) override;
+  virtual TooN::Vector<>
+  getDesiredCartesianTwist(const TooN::Vector<> &q_DH) override;
+};
+
+} // namespace sun
 #endif

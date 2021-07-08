@@ -3,7 +3,18 @@
 namespace sun
 {
 
-    Clik6DQuaternionSingleRobot::Clik6DQuaternionSingleRobot(const std::shared_ptr<Robot> &robot, const TooN::Vector<> &qDH0) : ClikSingleRobot(robot, qDH0) {}
+    Clik6DQuaternionSingleRobot::Clik6DQuaternionSingleRobot(const std::shared_ptr<Robot> &robot) : ClikSingleRobot(robot) {}
+
+    void Clik6DQuaternionSingleRobot::resetCurrentQaternion()
+    {
+        currentQuaternion_ = desiredQuaternion_;
+    }
+
+    void Clik6DQuaternionSingleRobot::resetDesiredCartesianTwist()
+    {
+        desiredLinearVelocity_ = TooN::Zeros;
+        desiredAngularVelocity_ = TooN::Zeros;
+    }
 
     /*========GETTERS============*/
 
@@ -11,30 +22,32 @@ namespace sun
 
     /*========CLIK=========*/
 
-    void Clik6DQuaternionSingleRobot::exec_single_step(const TooN::Vector<3> &pd, const UnitQuaternion &quatd, const TooN::Vector<3> &dpd, const TooN::Vector<3> &omegad, const TooN::Vector<> &qDHdot_secondary_obj)
+    TooN::Vector<> Clik6DQuaternionSingleRobot::getClikError(const TooN::Vector<> &q_DH)
     {
-        // Compute Error
         TooN::Vector<> error = TooN::Zeros(6);
         // fkine
-        TooN::Matrix<4, 4> b_T_e = robot_->fkine(qDH_k_);
+        TooN::Matrix<4, 4> b_T_e = robot_->fkine(q_DH);
         TooN::Vector<3> position = b_T_e.T()[3].slice<0, 3>();
-        UnitQuaternion quat = UnitQuaternion(b_T_e, oldQuaternion_);
+        currentQuaternion_ = UnitQuaternion(b_T_e, currentQuaternion_);
         // positionError
-        error.slice<0, 3>() = pd - position;
+        error.slice<0, 3>() = desiredPosition_ - position;
         // orientationError
-        UnitQuaternion deltaQ = quatd / quat;
+        UnitQuaternion deltaQ = desiredQuaternion_ / currentQuaternion_;
         error.slice<3, 3>() = deltaQ.getV();
 
-        // Use the geometric Jacobian
-        TooN::Matrix<> jacob = robot_->jacob_geometric(qDH_k_);
+        return error;
+    }
 
-        // Construct veld
-        TooN::Vector<> veld = TooN::Zeros(6);
-        veld.slice<0, 3>() = dpd;
-        veld.slice<3, 3>() = omegad;
-
-        ClikSingleRobot::exec_single_step(error, jacob, veld,
-                                          qDHdot_secondary_obj);
+    TooN::Matrix<> Clik6DQuaternionSingleRobot::getClikJacobian(const TooN::Vector<> &q_DH)
+    {
+        return robot_->jacob_geometric(q_DH);
+    }
+    TooN::Vector<> Clik6DQuaternionSingleRobot::getDesiredCartesianTwist(const TooN::Vector<> &q_DH)
+    {
+        TooN::Vector<> desiredCartesianTwist = TooN::Zeros(6);
+        desiredCartesianTwist.slice<0, 3>() = desiredLinearVelocity_;
+        desiredCartesianTwist.slice<3, 3>() = desiredAngularVelocity_;
+        return desiredCartesianTwist;
     }
 
 }

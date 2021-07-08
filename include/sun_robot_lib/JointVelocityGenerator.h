@@ -3,23 +3,20 @@
 
 #include "TooN/TooN.h"
 
-namespace sun{
+namespace sun {
 
-    /*!
-        Generatore di velocità di giunto a partire dallo stato del robot
-    */
-    class JointVelocityGenerator{
+/*!
+    Generatore di velocità di giunto a partire dallo stato del robot
+*/
+class JointVelocityGenerator {
 
-        private:
+private:
+protected:
+public:
+  virtual TooN::Vector<>
+  generateJointVelocityDH(const TooN::Vector<> &q_DH) = 0;
+};
 
-        protected:
-
-        public:
-
-        virtual TooN::Vector<> generateJointVelocityDH(const TooN::Vector<>& q_DH) const;
-
-    };
-
-}
+} // namespace sun
 
 #endif
