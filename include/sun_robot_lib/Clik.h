@@ -65,15 +65,18 @@ public:
   template <int Rows = TooN::Dynamic, int Cols = Rows,
             class Precision = TooN::DefaultPrecision,
             class Layout = TooN::RowMajor>
-  static std::vector<std::vector<double>> getSTDClumnsFromTooN(
+  static std::vector<std::vector<Precision>> getSTDClumnsFromTooN(
       const TooN::Matrix<Rows, Cols, Precision, Layout> &matrix_toon) {
-    std::vector<std::vector<double>> matrix_cols_std(matrix_toon.num_cols());
+
+    std::vector<std::vector<Precision>> matrix_cols_std(matrix_toon.num_cols());
+
     for (int i = 0; i < matrix_toon.num_cols(); i++) {
       matrix_cols_std[i].resize(matrix_toon.num_rows());
       for (int j = 0; j < matrix_toon.num_rows(); j++) {
         matrix_cols_std[i][j] = matrix_toon[j][i];
       }
     }
+
     return matrix_cols_std;
   }
 
@@ -81,14 +84,17 @@ public:
             class Precision = TooN::DefaultPrecision,
             class Layout = TooN::RowMajor>
   static TooN::Matrix<Rows, Cols, Precision, Layout> getTooNFromSTDClumns(
-      const std::vector<std::vector<double>> &matrix_cols_std) {
+      const std::vector<std::vector<Precision>> &matrix_cols_std) {
+
     TooN::Matrix<Rows, Cols, Precision, Layout> matrix_toon =
-        TooN::Zeros(matrix_cols_std.size(), matrix_cols_std[0].size());
-    for (int i = 0; i < matrix_toon.num_cols(); i++) {
-      for (int j = 0; j < matrix_toon.num_rows(); j++) {
+        TooN::Zeros(matrix_cols_std[0].size(), matrix_cols_std.size());
+
+    for (int i = 0; i < matrix_toon.num_rows(); i++) {
+      for (int j = 0; j < matrix_toon.num_cols(); j++) {
         matrix_toon[i][j] = matrix_cols_std[j][i];
       }
     }
+
     return matrix_toon;
   }
 
@@ -164,9 +170,11 @@ set Joint speed saturation used in dls for clik
                            const TooN::Vector<> &qDH_dot) const;
 
   virtual bool exceededHardJointLimits(const TooN::Vector<> &qDH) const = 0;
-  virtual bool exceededHardJointVelLimits(const TooN::Vector<> &qDH_dot) const = 0;
+  virtual bool
+  exceededHardJointVelLimits(const TooN::Vector<> &qDH_dot) const = 0;
   virtual bool exceededSoftJointLimits(const TooN::Vector<> &qDH) const = 0;
-  virtual bool exceededSoftJointVelLimits(const TooN::Vector<> &qDH_dot) const = 0;
+  virtual bool
+  exceededSoftJointVelLimits(const TooN::Vector<> &qDH_dot) const = 0;
 
   virtual TooN::Vector<> getClikError(const TooN::Vector<> &q_DH) = 0;
   virtual TooN::Matrix<> getClikJacobian(const TooN::Vector<> &q_DH) = 0;

@@ -1,5 +1,6 @@
 
 #include "sun_robot_lib/Clik.h"
+#include <algorithm>
 
 namespace sun {
 /*=========CONSTRUCTORS=========*/
@@ -17,20 +18,22 @@ TooN::Vector<>
 Clik::jointVelAddZerosForUnusedJoints(const TooN::Vector<> &qVel) const {
   std::vector<double> qVel_std = getSTDFromTooN(qVel);
 
-  auto it = qVel_std.begin();
   for (int i = 0; i < fixed_joints_.size(); i++) {
+    auto it = qVel_std.begin();
     qVel_std.insert(it + fixed_joints_[i], 0.0);
   }
+
   return getTooNFromSTD(qVel_std);
 }
 
 TooN::Vector<>
 Clik::jointVelRemoveUnusedJonts(const TooN::Vector<> &qVel) const {
   std::vector<double> qVel_std = getSTDFromTooN(qVel);
-
   auto it = qVel_std.begin();
+  int num_removed = 0;
   for (int i = 0; i < fixed_joints_.size(); i++) {
-    qVel_std.erase(it + fixed_joints_[i]);
+    qVel_std.erase(it + fixed_joints_[i] - num_removed);
+    num_removed++;
   }
   return getTooNFromSTD(qVel_std);
 }
@@ -41,8 +44,10 @@ Clik::jacobianRemoveUnusedJonts(const TooN::Matrix<> &jacob) const {
   std::vector<std::vector<double>> jacob_std_cols = getSTDClumnsFromTooN(jacob);
 
   auto it = jacob_std_cols.begin();
+  int num_removed = 0;
   for (int i = 0; i < fixed_joints_.size(); i++) {
-    jacob_std_cols.erase(it + fixed_joints_[i]);
+    jacob_std_cols.erase(it + fixed_joints_[i] - num_removed);
+    num_removed++;
   }
   return getTooNFromSTDClumns(jacob_std_cols);
 }
@@ -69,6 +74,7 @@ void Clik::setDLSJointSpeedSaturation(double dls_joint_speed_saturation) {
 
 void Clik::setFixedJoints(const std::vector<unsigned int> &fixed_joints) {
   fixed_joints_ = fixed_joints;
+  std::sort(fixed_joints_.begin(), fixed_joints_.end());
 }
 
 /*========CLIK=========*/
@@ -130,6 +136,7 @@ TooN::Vector<> Clik::clikDH_core_qdot_internal(
     return clikDH_core_qdot_internal_raw(error, jacob, veld,
                                          qDHdot_secondary_obj);
   } else {
+    // TODO: the following use of std::vector is very inefficient
     return jointVelAddZerosForUnusedJoints(clikDH_core_qdot_internal_raw(
         error, jacobianRemoveUnusedJonts(jacob), veld,
         jointVelRemoveUnusedJonts(qDHdot_secondary_obj)));
@@ -143,6 +150,7 @@ TooN::Vector<> Clik::clikDH_core_qdot_internal_desired_twist_only(
     return clikDH_core_qdot_internal_raw_desired_twist_only(
         jacob, veld, qDHdot_secondary_obj);
   } else {
+    // TODO: the following use of std::vector is very inefficient
     return jointVelAddZerosForUnusedJoints(
         clikDH_core_qdot_internal_raw_desired_twist_only(
             jacobianRemoveUnusedJonts(jacob), veld,
