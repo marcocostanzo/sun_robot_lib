@@ -185,6 +185,18 @@ TooN::Vector<> Clik::generateJointVelocityDH(const TooN::Vector<> &q_DH) {
 
 void Clik::safetyCheck(const TooN::Vector<> &qDH,
                        const TooN::Vector<> &qDH_dot) const {
+  if (TooN::isnan(qDH)) {
+    throw robot::ExceededJointLimits("Joint NaN : " + to_string(qDH));
+  }
+  if (!TooN::isfinite(qDH)) {
+    throw robot::ExceededJointLimits("Joint Inf : " + to_string(qDH));
+  }
+  if (TooN::isnan(qDH_dot)) {
+    throw robot::ExceededJointLimits("JointVel NaN : " + to_string(qDH_dot));
+  }
+  if (!TooN::isfinite(qDH_dot)) {
+    throw robot::ExceededJointLimits("JointVel Inf : " + to_string(qDH_dot));
+  }
   if (b_checkHardJointLimits_ && exceededHardJointLimits(qDH)) {
     throw robot::ExceededJointLimits("HardJointLimits");
   }

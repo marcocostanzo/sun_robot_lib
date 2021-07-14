@@ -42,6 +42,29 @@ public:
   template <int Size = TooN::Dynamic,
             typename Precision = TooN::DefaultPrecision,
             typename Base = TooN::Internal::VBase>
+  static bool
+  toonAnyIsNaNOrIsInf(const TooN::Vector<Size, Precision, Base> &v) {
+    return TooN::isnan(v) || !TooN::isfinite(v);
+  }
+
+  template <int Size = TooN::Dynamic,
+            typename Precision = TooN::DefaultPrecision,
+            typename Base = TooN::Internal::VBase>
+  static std::string to_string(const TooN::Vector<Size, Precision, Base> &v) {
+    std::string out = "[";
+    if (v.size() > 0) {
+      out += " " + std::to_string(v[0]);
+    }
+    for (int i = 1; i < v.size(); i++) {
+      out += " ," + std::to_string(v[i]);
+    }
+    out += " ]";
+    return out;
+  }
+
+  template <int Size = TooN::Dynamic,
+            typename Precision = TooN::DefaultPrecision,
+            typename Base = TooN::Internal::VBase>
   static TooN::Vector<Size, Precision, Base>
   getTooNFromSTD(const std::vector<Precision> &vec_std) {
     TooN::Vector<Size, Precision, Base> v_toon = TooN::Zeros(vec_std.size());
