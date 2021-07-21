@@ -27,7 +27,7 @@ namespace sun
         TooN::Vector<> error = TooN::Zeros(6);
         // fkine
         TooN::Matrix<4, 4> b_T_e = robot_->fkine(q_DH);
-        TooN::Vector<3> position = b_T_e.T()[3].slice<0, 3>();
+        TooN::Vector<3> position = transl(b_T_e);
         currentQuaternion_ = UnitQuaternion(b_T_e, currentQuaternion_);
         // positionError
         error.slice<0, 3>() = desiredPosition_ - position;

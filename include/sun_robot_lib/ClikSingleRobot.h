@@ -30,6 +30,9 @@ public:
   virtual bool
   exceededHardJointVelLimits(const TooN::Vector<> &qDH_dot) const override;
 
+  virtual void
+  checkHardJointVelLimits(const TooN::Vector<> &qDH_dot) const override;
+
   virtual bool
   exceededSoftJointLimits(const TooN::Vector<> &qDH) const override;
 

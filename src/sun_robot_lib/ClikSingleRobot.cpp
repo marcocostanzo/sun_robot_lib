@@ -24,6 +24,19 @@ bool ClikSingleRobot::exceededHardJointVelLimits(
       robot_->jointsvel_DH2Robot(qDH_dot));
 }
 
+void ClikSingleRobot::checkHardJointVelLimits(
+    const TooN::Vector<> &qDH_dot) const {
+
+  if (exceededHardJointVelLimits(qDH_dot)) {
+    std::string error_string = "exceededHardJointLimits on joints ";
+    error_string += robot_->jointsNameFromBitMask(
+        robot_->checkHardVelocityLimits(robot_->jointsvel_DH2Robot(qDH_dot)));
+    error_string +=
+        " with values qR_dot: " + to_string(robot_->jointsvel_DH2Robot(qDH_dot));
+    throw robot::ExceededJointLimits(error_string);
+  }
+}
+
 bool ClikSingleRobot::exceededSoftJointLimits(const TooN::Vector<> &qDH) const {
   return robot_->exceededSoftJointLimits(robot_->joints_DH2Robot(qDH));
 }

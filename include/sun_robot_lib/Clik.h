@@ -195,6 +195,7 @@ set Joint speed saturation used in dls for clik
   virtual bool exceededHardJointLimits(const TooN::Vector<> &qDH) const = 0;
   virtual bool
   exceededHardJointVelLimits(const TooN::Vector<> &qDH_dot) const = 0;
+  virtual void checkHardJointVelLimits(const TooN::Vector<> &qDH_dot) const = 0;
   virtual bool exceededSoftJointLimits(const TooN::Vector<> &qDH) const = 0;
   virtual bool
   exceededSoftJointVelLimits(const TooN::Vector<> &qDH_dot) const = 0;
