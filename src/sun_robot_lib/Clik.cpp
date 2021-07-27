@@ -212,4 +212,8 @@ void Clik::safetyCheck(const TooN::Vector<> &qDH,
   }
 }
 
+TooN::Vector<> Clik::getCartesianTwistControl(const TooN::Vector<> &q_DH) {
+  return getDesiredCartesianTwist(q_DH) + gain_error_ * getClikError(q_DH);
+}
+
 } // namespace sun

@@ -204,6 +204,11 @@ set Joint speed saturation used in dls for clik
   virtual TooN::Matrix<> getClikJacobian(const TooN::Vector<> &q_DH) = 0;
   virtual TooN::Vector<>
   getDesiredCartesianTwist(const TooN::Vector<> &q_DH) = 0;
+
+  /**
+    v + gamma*e
+  */
+  virtual TooN::Vector<> getCartesianTwistControl(const TooN::Vector<> &q_DH);
 };
 
 } // namespace sun
