@@ -28,6 +28,8 @@ public:
 
   /*========GETTERS============*/
 
+  const sun::UnitQuaternion &getCurrentQuaternion() const;
+
   /*========SETTERS============*/
 
   virtual void resetDesiredCartesianTwist();
