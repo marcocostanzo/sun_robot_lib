@@ -248,6 +248,7 @@ TooN::Vector<> Robot::getCenterOfSoftJointLimits() const {
     centers[i] =
         (link->getSoftJointLimits()[1] + link->getSoftJointLimits()[0]) / 2.0;
   }
+  return centers;
 }
 
 /*
